@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC9B17A1170B3B9000116FA8"
                BuildableName = "Tuto2.app"
-               BlueprintName = "Tuto2"
-               ReferencedContainer = "container:Tuto2.xcodeproj">
+               BlueprintName = "Tuto"
+               ReferencedContainer = "container:Tuto.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9B17A1170B3B9000116FA8"
             BuildableName = "Tuto2.app"
-            BlueprintName = "Tuto2"
-            ReferencedContainer = "container:Tuto2.xcodeproj">
+            BlueprintName = "Tuto"
+            ReferencedContainer = "container:Tuto.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9B17A1170B3B9000116FA8"
             BuildableName = "Tuto2.app"
-            BlueprintName = "Tuto2"
-            ReferencedContainer = "container:Tuto2.xcodeproj">
+            BlueprintName = "Tuto"
+            ReferencedContainer = "container:Tuto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9B17A1170B3B9000116FA8"
             BuildableName = "Tuto2.app"
-            BlueprintName = "Tuto2"
-            ReferencedContainer = "container:Tuto2.xcodeproj">
+            BlueprintName = "Tuto"
+            ReferencedContainer = "container:Tuto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

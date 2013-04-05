@@ -15,6 +15,5 @@
 
 - (IBAction)editBegin:(UITextField *)sender;
 - (IBAction)editEnd:(UITextField *)sender;
-//- (IBAction)goButton:(UIButton *)sender;
 
 @end

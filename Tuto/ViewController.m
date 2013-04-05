@@ -68,16 +68,4 @@
     return YES;
 }
 
-/*
-- (IBAction)goButton:(UIButton *)sender
-{
-    if (_searchTextField.text.length)
-    {
-        [_searchTextField resignFirstResponder];
-        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[_searchTextField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-        [self.navigationController pushViewController:tableViewController animated:true];
-        [tableViewController release];
-    }
-}
-*/
 @end

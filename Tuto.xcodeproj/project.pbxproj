@@ -29,14 +29,14 @@
 /* Begin PBXFileReference section */
 		51FD92A2B57344C78CB37F8A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DD89759722C84E678B61526C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC9B17A2170B3B9000116FA8 /* Tuto2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuto2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9B17A2170B3B9000116FA8 /* Tuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9B17A5170B3B9000116FA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC9B17A7170B3B9000116FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC9B17A9170B3B9000116FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EC9B17AD170B3B9000116FA8 /* Tuto2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tuto2-Info.plist"; sourceTree = "<group>"; };
+		EC9B17AD170B3B9000116FA8 /* Tuto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tuto-Info.plist"; sourceTree = "<group>"; };
 		EC9B17AF170B3B9000116FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC9B17B1170B3B9000116FA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EC9B17B3170B3B9000116FA8 /* Tuto2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tuto2-Prefix.pch"; sourceTree = "<group>"; };
+		EC9B17B3170B3B9000116FA8 /* Tuto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tuto-Prefix.pch"; sourceTree = "<group>"; };
 		EC9B17B4170B3B9000116FA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC9B17B5170B3B9000116FA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EC9B17B7170B3B9000116FA8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		EC9B17A3170B3B9000116FA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC9B17A2170B3B9000116FA8 /* Tuto2.app */,
+				EC9B17A2170B3B9000116FA8 /* Tuto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,10 +125,10 @@
 		EC9B17AC170B3B9000116FA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EC9B17AD170B3B9000116FA8 /* Tuto2-Info.plist */,
+				EC9B17AD170B3B9000116FA8 /* Tuto-Info.plist */,
 				EC9B17AE170B3B9000116FA8 /* InfoPlist.strings */,
 				EC9B17B1170B3B9000116FA8 /* main.m */,
-				EC9B17B3170B3B9000116FA8 /* Tuto2-Prefix.pch */,
+				EC9B17B3170B3B9000116FA8 /* Tuto-Prefix.pch */,
 				EC9B17B7170B3B9000116FA8 /* Default.png */,
 				EC9B17B9170B3B9000116FA8 /* Default@2x.png */,
 				EC9B17BB170B3B9000116FA8 /* Default-568h@2x.png */,
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC9B17A1170B3B9000116FA8 /* Tuto2 */ = {
+		EC9B17A1170B3B9000116FA8 /* Tuto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC9B17C5170B3B9000116FA8 /* Build configuration list for PBXNativeTarget "Tuto2" */;
+			buildConfigurationList = EC9B17C5170B3B9000116FA8 /* Build configuration list for PBXNativeTarget "Tuto" */;
 			buildPhases = (
 				EC9B179E170B3B9000116FA8 /* Sources */,
 				EC9B179F170B3B9000116FA8 /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = Tuto2;
+			name = Tuto;
 			productName = Tuto;
-			productReference = EC9B17A2170B3B9000116FA8 /* Tuto2.app */;
+			productReference = EC9B17A2170B3B9000116FA8 /* Tuto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +166,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Intern;
 			};
-			buildConfigurationList = EC9B179D170B3B9000116FA8 /* Build configuration list for PBXProject "Tuto2" */;
+			buildConfigurationList = EC9B179D170B3B9000116FA8 /* Build configuration list for PBXProject "Tuto" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -178,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC9B17A1170B3B9000116FA8 /* Tuto2 */,
+				EC9B17A1170B3B9000116FA8 /* Tuto */,
 			);
 		};
 /* End PBXProject section */
@@ -312,9 +312,9 @@
 			baseConfigurationReference = 51FD92A2B57344C78CB37F8A /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tuto/Tuto2-Prefix.pch";
-				INFOPLIST_FILE = "Tuto/Tuto2-Info.plist";
-				PRODUCT_NAME = Tuto2;
+				GCC_PREFIX_HEADER = "Tuto/Tuto-Prefix.pch";
+				INFOPLIST_FILE = "Tuto/Tuto-Info.plist";
+				PRODUCT_NAME = Tuto;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -324,9 +324,9 @@
 			baseConfigurationReference = 51FD92A2B57344C78CB37F8A /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tuto/Tuto2-Prefix.pch";
-				INFOPLIST_FILE = "Tuto/Tuto2-Info.plist";
-				PRODUCT_NAME = Tuto2;
+				GCC_PREFIX_HEADER = "Tuto/Tuto-Prefix.pch";
+				INFOPLIST_FILE = "Tuto/Tuto-Info.plist";
+				PRODUCT_NAME = Tuto;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -334,7 +334,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC9B179D170B3B9000116FA8 /* Build configuration list for PBXProject "Tuto2" */ = {
+		EC9B179D170B3B9000116FA8 /* Build configuration list for PBXProject "Tuto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC9B17C3170B3B9000116FA8 /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC9B17C5170B3B9000116FA8 /* Build configuration list for PBXNativeTarget "Tuto2" */ = {
+		EC9B17C5170B3B9000116FA8 /* Build configuration list for PBXNativeTarget "Tuto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC9B17C6170B3B9000116FA8 /* Debug */,
