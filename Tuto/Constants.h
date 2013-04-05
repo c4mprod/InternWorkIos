@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
-#ifndef Tuto2_Constants_h
-#define Tuto2_Constants_h
+#ifndef Tuto_Constants_h
+#define Tuto_Constants_h
 
 #define JSON_TITLE @"titleNoFormatting"
 #define JSON_URL   @"url"
