@@ -9,33 +9,96 @@
 #import <AFNetworking.h>
 #import "TableViewController.h"
 #import "DetailsViewController.h"
-#import "Article.h"
+#import "Articles.h"
 
 @implementation TableViewController
+
 @synthesize mSearchRequest;
 @synthesize mTableData;
+@synthesize mFetchedResultsController;
+@synthesize mContext;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil request:(NSString *)_request
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil request:(NSString *)_request fetchedResultsController:(NSFetchedResultsController *)_fetchedResultsController;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        self.mSearchRequest = _request;
-        mResultPerPage      = 8;
-        mStartIndex         = 0;
-        mResultEnd          = FALSE;
+        self.mSearchRequest            = _request;
+        mResultPerPage                 = 8;
+        mResultEnd                     = FALSE;
+        self.mFetchedResultsController = _fetchedResultsController;
+        self.mContext                  = [mFetchedResultsController managedObjectContext];
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.mTableData = [NSMutableArray array];
+    [self getImageViaJSON];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+    [UITableView release];
+    [self.mSearchRequest release];
+    [self.mTableData release];
+    [self.mFetchedResultsController release];
+    [self.mContext release];
+    [super dealloc];
+}
+
+- (void)dataCoreInsertNewRequest
+{
+    NSFetchRequest *query       = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Request" inManagedObjectContext:self.mContext];
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"value = %@", self.mSearchRequest];
+    [query setEntity:entity];
+    [query setPredicate:predicate];
+    [query setFetchLimit:1];
+    
+    NSError *error                 = nil;
+    ArticleRequest *articleRequest = nil;
+    if ([self.mContext countForFetchRequest:query error:&error])
+    {
+         articleRequest = [[self.mContext executeFetchRequest:query error:&error] lastObject];
+    }
+    else
+    {
+        articleRequest = [NSEntityDescription insertNewObjectForEntityForName:@"Request" inManagedObjectContext:mContext];
+        articleRequest = [[ArticleRequest alloc] initWithIndex:0 value:self.mSearchRequest finish:FALSE];
+        
+        
+    }
+
+    
+    if (![self.mContext save:&error])
+    {
+        abort();
+        [self alertViewMessage:@"Error" message:@"Database error"];
+    }
+    
+    
+    BOOL *finish    = [results valueForKey:@"finish"];
+    int64_t *index = [results valueForKey:@"index"];
+    
 }
 
 - (void)alertViewMessage:(NSString *)title message:(NSString *)_message
 {
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title message:_message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
-    [alert show];   
+    [alert show];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)getImageViaJSON
-{
+{   
     UIAlertView *alertView           = [[[UIAlertView alloc] initWithTitle:@"Loading..." message:@"\n" delegate:self cancelButtonTitle:nil otherButtonTitles:nil] autorelease];
     UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
     spinner.center                   = CGPointMake(139.5, 75.5);
@@ -63,9 +126,8 @@
             NSArray *results = [JSON valueForKeyPath:@"responseData.results"];
             if (!results || !results.count)
             {
-                [self alertViewMessage:@"Information" message:@"No result found"];
                 [alertView dismissWithClickedButtonIndex:0 animated:YES];
-                [self.navigationController popViewControllerAnimated:YES];
+                [self alertViewMessage:@"Information" message:@"No result found"];
             }
             else
             {
@@ -78,9 +140,8 @@
 
                 if (!self.mTableData || !self.mTableData.count)
                 {
-                    [self alertViewMessage:@"Information" message:@"No result found"];
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
-                    [self.navigationController popViewControllerAnimated:YES];
+                    [self alertViewMessage:@"Information" message:@"No result found"];
                 }
                 else
                 {
@@ -98,18 +159,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     }];
     [operation start];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.mTableData = [NSMutableArray array];
-    [self getImageViaJSON];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -169,8 +218,4 @@
     }
 }
 
-- (void)dealloc {
-    [UITableView release];
-    [super dealloc];
-}
 @end

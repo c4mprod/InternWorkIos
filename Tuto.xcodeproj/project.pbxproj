@@ -19,11 +19,14 @@
 		EC9B17BC170B3B9000116FA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9B17BB170B3B9000116FA8 /* Default-568h@2x.png */; };
 		EC9B17BF170B3B9000116FA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B17BE170B3B9000116FA8 /* ViewController.m */; };
 		EC9B17C2170B3B9000116FA8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9B17C0170B3B9000116FA8 /* ViewController.xib */; };
+		ECA562311712D22700D6DF50 /* tuto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECA5622F1712D22700D6DF50 /* tuto.xcdatamodeld */; };
 		ECB98866170C582300F3E0C3 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB98865170C582300F3E0C3 /* Article.m */; };
 		ECBAE648170C20EC008D5C47 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBAE646170C20EC008D5C47 /* TableViewController.m */; };
 		ECBAE649170C20EC008D5C47 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBAE647170C20EC008D5C47 /* TableViewController.xib */; };
 		ECBAE64D170C43F1008D5C47 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBAE64B170C43F1008D5C47 /* DetailsViewController.m */; };
 		ECBAE64E170C43F1008D5C47 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBAE64C170C43F1008D5C47 /* DetailsViewController.xib */; };
+		ECEBEA8D171315A90065E8DB /* ArticleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBEA8C171315A90065E8DB /* ArticleRequest.m */; };
+		ECEBEA90171315B50065E8DB /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBEA8F171315B50065E8DB /* Articles.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,7 @@
 		EC9B17BD170B3B9000116FA8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EC9B17BE170B3B9000116FA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC9B17C1170B3B9000116FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		ECA562301712D22700D6DF50 /* tuto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tuto.xcdatamodel; sourceTree = "<group>"; };
 		ECB98864170C582300F3E0C3 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		ECB98865170C582300F3E0C3 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		ECB99ACD170DA8640010C8D3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -54,6 +58,10 @@
 		ECBAE64A170C43F1008D5C47 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		ECBAE64B170C43F1008D5C47 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		ECBAE64C170C43F1008D5C47 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		ECEBEA8B171315A90065E8DB /* ArticleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleRequest.h; sourceTree = "<group>"; };
+		ECEBEA8C171315A90065E8DB /* ArticleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleRequest.m; sourceTree = "<group>"; };
+		ECEBEA8E171315B40065E8DB /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		ECEBEA8F171315B50065E8DB /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,11 @@
 				ECBAE64A170C43F1008D5C47 /* DetailsViewController.h */,
 				ECBAE64B170C43F1008D5C47 /* DetailsViewController.m */,
 				ECBAE64C170C43F1008D5C47 /* DetailsViewController.xib */,
+				ECA5622F1712D22700D6DF50 /* tuto.xcdatamodeld */,
+				ECEBEA8E171315B40065E8DB /* Articles.h */,
+				ECEBEA8F171315B50065E8DB /* Articles.m */,
+				ECEBEA8B171315A90065E8DB /* ArticleRequest.h */,
+				ECEBEA8C171315A90065E8DB /* ArticleRequest.m */,
 				EC9B17AC170B3B9000116FA8 /* Supporting Files */,
 			);
 			path = Tuto;
@@ -228,6 +241,9 @@
 				ECBAE648170C20EC008D5C47 /* TableViewController.m in Sources */,
 				ECBAE64D170C43F1008D5C47 /* DetailsViewController.m in Sources */,
 				ECB98866170C582300F3E0C3 /* Article.m in Sources */,
+				ECA562311712D22700D6DF50 /* tuto.xcdatamodeld in Sources */,
+				ECEBEA8D171315A90065E8DB /* ArticleRequest.m in Sources */,
+				ECEBEA90171315B50065E8DB /* Articles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECA5622F1712D22700D6DF50 /* tuto.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECA562301712D22700D6DF50 /* tuto.xcdatamodel */,
+			);
+			currentVersion = ECA562301712D22700D6DF50 /* tuto.xcdatamodel */;
+			path = tuto.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EC9B179A170B3B9000116FA8 /* Project object */;
 }

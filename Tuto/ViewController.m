@@ -26,6 +26,10 @@
 {
     [_searchTextField release];
     [_goButton release];
+    
+    [_fetchedResultsController release];
+    [_managedObjectContext release];
+    
     [super dealloc];
 }
 
@@ -61,7 +65,7 @@
     if (textField.text.length)
     {
         [textField resignFirstResponder];
-        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] fetchedResultsController:fetchedResultsController];
         [self.navigationController pushViewController:tableViewController animated:true];
         [tableViewController release];
     }
