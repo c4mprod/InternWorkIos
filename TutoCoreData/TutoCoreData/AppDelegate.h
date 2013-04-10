@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+//@class ViewController;
+@class ViewControllerLogin;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,6 +23,7 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 @property (strong, nonatomic) UINavigationController *navigationController;
-@property (strong, nonatomic) ViewController *viewController;
+//@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) ViewControllerLogin *viewController;
 
 @end

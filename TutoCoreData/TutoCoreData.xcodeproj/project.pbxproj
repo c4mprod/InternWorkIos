@@ -23,8 +23,6 @@
 		EC3C7F5A17146B7300737C38 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F5817146B7300737C38 /* ViewController.xib */; };
 		EC3C7F5E17146E2C00737C38 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F5C17146E2C00737C38 /* TableViewController.m */; };
 		EC3C7F5F17146E2C00737C38 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F5D17146E2C00737C38 /* TableViewController.xib */; };
-		EC3C7F68171473A400737C38 /* ArticleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F67171473A400737C38 /* ArticleRequest.m */; };
-		EC3C7F6B171473A500737C38 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6A171473A500737C38 /* Articles.m */; };
 		EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6E17147B3700737C38 /* DetailsViewController.m */; };
 		EC3C7F7117147B3700737C38 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */; };
 		ECD5323617156ED80080DBE9 /* AFHTTPImageManagerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */; };
@@ -34,6 +32,11 @@
 		ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */; };
 		ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323517156ED80080DBE9 /* ImageViewPatern.m */; };
 		ECD5323E17158EA90080DBE9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323D17158EA90080DBE9 /* NSString+MD5.m */; };
+		ECD53247171598BD0080DBE9 /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD53245171598BC0080DBE9 /* ViewControllerLogin.m */; };
+		ECD53248171598BD0080DBE9 /* ViewControllerLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECD53246171598BD0080DBE9 /* ViewControllerLogin.xib */; };
+		ECD532541715AD770080DBE9 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD532531715AD770080DBE9 /* Articles.m */; };
+		ECD532571715AD790080DBE9 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD532561715AD790080DBE9 /* Users.m */; };
+		ECD5325A1715AD7B0080DBE9 /* ArticleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD532591715AD7A0080DBE9 /* ArticleRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,10 +63,6 @@
 		EC3C7F5B17146E2C00737C38 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		EC3C7F5C17146E2C00737C38 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		EC3C7F5D17146E2C00737C38 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		EC3C7F66171473A400737C38 /* ArticleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleRequest.h; sourceTree = "<group>"; };
-		EC3C7F67171473A400737C38 /* ArticleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleRequest.m; sourceTree = "<group>"; };
-		EC3C7F69171473A500737C38 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
-		EC3C7F6A171473A500737C38 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		EC3C7F6C1714755900737C38 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EC3C7F6D17147B3600737C38 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EC3C7F6E17147B3700737C38 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
@@ -84,6 +83,15 @@
 		ECD5323517156ED80080DBE9 /* ImageViewPatern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewPatern.m; sourceTree = "<group>"; };
 		ECD5323C17158EA90080DBE9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		ECD5323D17158EA90080DBE9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		ECD53244171598BC0080DBE9 /* ViewControllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
+		ECD53245171598BC0080DBE9 /* ViewControllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
+		ECD53246171598BD0080DBE9 /* ViewControllerLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerLogin.xib; sourceTree = "<group>"; };
+		ECD532521715AD760080DBE9 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		ECD532531715AD770080DBE9 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
+		ECD532551715AD780080DBE9 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		ECD532561715AD790080DBE9 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		ECD532581715AD790080DBE9 /* ArticleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleRequest.h; sourceTree = "<group>"; };
+		ECD532591715AD7A0080DBE9 /* ArticleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,9 @@
 				EC3C7F6C1714755900737C38 /* Constants.h */,
 				EC3C7F3917146B2800737C38 /* AppDelegate.h */,
 				EC3C7F3A17146B2800737C38 /* AppDelegate.m */,
+				ECD53244171598BC0080DBE9 /* ViewControllerLogin.h */,
+				ECD53245171598BC0080DBE9 /* ViewControllerLogin.m */,
+				ECD53246171598BD0080DBE9 /* ViewControllerLogin.xib */,
 				EC3C7F5617146B7300737C38 /* ViewController.h */,
 				EC3C7F5717146B7300737C38 /* ViewController.m */,
 				EC3C7F5817146B7300737C38 /* ViewController.xib */,
@@ -148,11 +159,13 @@
 				EC3C7F6D17147B3600737C38 /* DetailsViewController.h */,
 				EC3C7F6E17147B3700737C38 /* DetailsViewController.m */,
 				EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */,
-				EC3C7F69171473A500737C38 /* Articles.h */,
-				EC3C7F6A171473A500737C38 /* Articles.m */,
-				EC3C7F66171473A400737C38 /* ArticleRequest.h */,
-				EC3C7F67171473A400737C38 /* ArticleRequest.m */,
 				EC3C7F4217146B2800737C38 /* TutoCoreData.xcdatamodeld */,
+				ECD532581715AD790080DBE9 /* ArticleRequest.h */,
+				ECD532591715AD7A0080DBE9 /* ArticleRequest.m */,
+				ECD532551715AD780080DBE9 /* Users.h */,
+				ECD532561715AD790080DBE9 /* Users.m */,
+				ECD532521715AD760080DBE9 /* Articles.h */,
+				ECD532531715AD770080DBE9 /* Articles.m */,
 				EC3C7F3117146B2800737C38 /* Supporting Files */,
 			);
 			path = TutoCoreData;
@@ -254,6 +267,7 @@
 				EC3C7F5A17146B7300737C38 /* ViewController.xib in Resources */,
 				EC3C7F5F17146E2C00737C38 /* TableViewController.xib in Resources */,
 				EC3C7F7117147B3700737C38 /* DetailsViewController.xib in Resources */,
+				ECD53248171598BD0080DBE9 /* ViewControllerLogin.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +300,6 @@
 				EC3C7F4417146B2800737C38 /* TutoCoreData.xcdatamodeld in Sources */,
 				EC3C7F5917146B7300737C38 /* ViewController.m in Sources */,
 				EC3C7F5E17146E2C00737C38 /* TableViewController.m in Sources */,
-				EC3C7F68171473A400737C38 /* ArticleRequest.m in Sources */,
-				EC3C7F6B171473A500737C38 /* Articles.m in Sources */,
 				EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */,
 				ECD5323617156ED80080DBE9 /* AFHTTPImageManagerClient.m in Sources */,
 				ECD5323717156ED80080DBE9 /* C4MAFHTTPClient.m in Sources */,
@@ -296,6 +308,10 @@
 				ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */,
 				ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */,
 				ECD5323E17158EA90080DBE9 /* NSString+MD5.m in Sources */,
+				ECD53247171598BD0080DBE9 /* ViewControllerLogin.m in Sources */,
+				ECD532541715AD770080DBE9 /* Articles.m in Sources */,
+				ECD532571715AD790080DBE9 /* Users.m in Sources */,
+				ECD5325A1715AD7B0080DBE9 /* ArticleRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

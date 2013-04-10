@@ -2,7 +2,7 @@
 //  Articles.h
 //  TutoCoreData
 //
-//  Created by Intern on 09/04/13.
+//  Created by Intern on 10/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 

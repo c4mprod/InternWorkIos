@@ -1,20 +1,19 @@
 //
-//  Articles.m
+//  Users.m
 //  TutoCoreData
 //
 //  Created by Intern on 10/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
-#import "Articles.h"
+#import "Users.h"
 #import "ArticleRequest.h"
 
 
-@implementation Articles
+@implementation Users
 
-@dynamic index;
-@dynamic title;
-@dynamic urlImage;
-@dynamic articleRequest;
+@dynamic login;
+@dynamic password;
+@dynamic articleRequests;
 
 @end

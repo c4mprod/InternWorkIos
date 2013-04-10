@@ -12,19 +12,21 @@
 #import "DetailsViewController.h"
 #import "ArticleRequest.h"
 #import "Articles.h"
+#import "Users.h"
 
 @implementation TableViewController
-
 @synthesize mSearchRequest;
 @synthesize mArticleRequest;
 @synthesize mTableArticles;
+@synthesize mUser;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil request:(NSString *)_request
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil request:(NSString *)_request user:(Users *)_user
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
         self.mSearchRequest       = _request;
+        self.mUser                = _user;
         mResultPerPage            = 8;
         self.mArticleRequest      = nil;
         AppDelegate *appDelegate  = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -47,6 +49,7 @@
 
 - (void)dealloc {
     [_mTableView release];
+    [self.mUser release];
     [self.mSearchRequest release];
     [self.mTableArticles release];
     [_mFetchedResultsController release];
@@ -68,7 +71,7 @@
 {
     NSFetchRequest *query       = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
-    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"value = %@", self.mSearchRequest];
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"user = %@ AND value = %@", self.mUser, self.mSearchRequest];
     [query setEntity:entity];
     [query setPredicate:predicate];
     [query setFetchLimit:1];
@@ -94,6 +97,7 @@
     else
     {
         self.mArticleRequest             = [NSEntityDescription insertNewObjectForEntityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
+        self.mArticleRequest.user        = self.mUser;
         self.mArticleRequest.startIndex  = [NSNumber numberWithInt:0];
         self.mArticleRequest.value       = self.mSearchRequest;
         self.mArticleRequest.finish      = [NSNumber numberWithBool:FALSE];

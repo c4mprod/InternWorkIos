@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+//#import "ViewController.h"
+#import "ViewControllerLogin.h"
 
 @implementation AppDelegate
 
@@ -29,7 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {  
     self.window                    = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.viewController            = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    //self.viewController            = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    self.viewController            = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
     self.self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
     self.window.rootViewController = self.self.navigationController;
     [self.window makeKeyAndVisible];

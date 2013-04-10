@@ -8,8 +8,20 @@
 
 #import "ViewController.h"
 #import "TableViewController.h"
+#import "Users.h"
 
 @implementation ViewController
+@synthesize mVcUser;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil user:(Users *)_user
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        self.mVcUser = _user;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -25,17 +37,8 @@
 - (void)dealloc
 {
     [_searchTextField release];
+    [self.mVcUser release];
     [super dealloc];
-}
-
-- (IBAction)editBegin:(UITextField *)sender
-{
-    [self animationEdit:-100];
-}
-
-- (IBAction)editEnd:(UITextField *)sender
-{
-    [self animationEdit:100];
 }
 
 - (void)animationEdit:(int)_decal
@@ -49,12 +52,22 @@
 	[UIView commitAnimations];
 }
 
+- (IBAction)editBegin:(UITextField *)sender
+{
+    [self animationEdit:-100];
+}
+
+- (IBAction)editEnd:(UITextField *)sender
+{
+    [self animationEdit:100];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField.text.length)
+    if (textField.text.length != 0)
     {
         [textField resignFirstResponder];
-        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] user:mVcUser];
         
         [self.navigationController pushViewController:tableViewController animated:true];
         [tableViewController release];
