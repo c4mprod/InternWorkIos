@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageViewManager.h"
 
 @interface DetailsViewController : UIViewController
 {
     NSMutableArray *mTableData;
     int index;
 }
-@property (retain, nonatomic) IBOutlet UIImageView *imageView;
+@property (retain, nonatomic) IBOutlet ImageViewManager *imageView;
 @property (retain, nonatomic) NSMutableArray *mTableData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil articles:(NSMutableArray*)_articles index:(int)_index;

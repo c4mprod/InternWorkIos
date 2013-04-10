@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "Articles.h"
+#import "ImageManager.h"
 
 @implementation DetailsViewController
 @synthesize mTableData;
@@ -47,15 +48,15 @@
 {
     [self.imageView release];
     [self.mTableData release];
+    [_imageView release];
     [super dealloc];
 }
 
 - (void)loadImage
 {
-    Articles *article = [self.mTableData objectAtIndex:index];
-    self.title        = article.title;
-    NSURL *urlImage   = [NSURL URLWithString:article.urlImage];
-    [self.imageView setImageWithURL:urlImage];
+    Articles *article    = [self.mTableData objectAtIndex:index];
+    self.title           = article.title;
+    self.imageView.image = [[ImageManager sharedImageManager] getImageNamed:article.urlImage withDelegate:self.imageView];
 }
 
 - (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer

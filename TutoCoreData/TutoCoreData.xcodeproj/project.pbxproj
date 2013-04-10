@@ -27,6 +27,12 @@
 		EC3C7F6B171473A500737C38 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6A171473A500737C38 /* Articles.m */; };
 		EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6E17147B3700737C38 /* DetailsViewController.m */; };
 		EC3C7F7117147B3700737C38 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */; };
+		ECD5323617156ED80080DBE9 /* AFHTTPImageManagerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */; };
+		ECD5323717156ED80080DBE9 /* C4MAFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322B17156ED80080DBE9 /* C4MAFHTTPClient.m */; };
+		ECD5323817156ED80080DBE9 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322D17156ED80080DBE9 /* ImageManager.m */; };
+		ECD5323917156ED80080DBE9 /* ImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323017156ED80080DBE9 /* ImageViewManager.m */; };
+		ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */; };
+		ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323517156ED80080DBE9 /* ImageViewPatern.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,20 @@
 		EC3C7F6D17147B3600737C38 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EC3C7F6E17147B3700737C38 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		ECD5322817156ED80080DBE9 /* AFHTTPImageManagerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPImageManagerClient.h; sourceTree = "<group>"; };
+		ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPImageManagerClient.m; sourceTree = "<group>"; };
+		ECD5322A17156ED80080DBE9 /* C4MAFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4MAFHTTPClient.h; sourceTree = "<group>"; };
+		ECD5322B17156ED80080DBE9 /* C4MAFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4MAFHTTPClient.m; sourceTree = "<group>"; };
+		ECD5322C17156ED80080DBE9 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		ECD5322D17156ED80080DBE9 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		ECD5322E17156ED80080DBE9 /* ImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDelegate.h; sourceTree = "<group>"; };
+		ECD5322F17156ED80080DBE9 /* ImageViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewManager.h; sourceTree = "<group>"; };
+		ECD5323017156ED80080DBE9 /* ImageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewManager.m; sourceTree = "<group>"; };
+		ECD5323117156ED80080DBE9 /* ImageViewManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewManagerDelegate.h; sourceTree = "<group>"; };
+		ECD5323217156ED80080DBE9 /* ImageViewManagerRounded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewManagerRounded.h; sourceTree = "<group>"; };
+		ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewManagerRounded.m; sourceTree = "<group>"; };
+		ECD5323417156ED80080DBE9 /* ImageViewPatern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewPatern.h; sourceTree = "<group>"; };
+		ECD5323517156ED80080DBE9 /* ImageViewPatern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewPatern.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +132,7 @@
 		EC3C7F3017146B2800737C38 /* TutoCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				ECD5322717156ED80080DBE9 /* imageManager */,
 				EC3C7F6C1714755900737C38 /* Constants.h */,
 				EC3C7F3917146B2800737C38 /* AppDelegate.h */,
 				EC3C7F3A17146B2800737C38 /* AppDelegate.m */,
@@ -146,6 +167,27 @@
 				EC3C7F4017146B2800737C38 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECD5322717156ED80080DBE9 /* imageManager */ = {
+			isa = PBXGroup;
+			children = (
+				ECD5322817156ED80080DBE9 /* AFHTTPImageManagerClient.h */,
+				ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */,
+				ECD5322A17156ED80080DBE9 /* C4MAFHTTPClient.h */,
+				ECD5322B17156ED80080DBE9 /* C4MAFHTTPClient.m */,
+				ECD5322C17156ED80080DBE9 /* ImageManager.h */,
+				ECD5322D17156ED80080DBE9 /* ImageManager.m */,
+				ECD5322E17156ED80080DBE9 /* ImageManagerDelegate.h */,
+				ECD5322F17156ED80080DBE9 /* ImageViewManager.h */,
+				ECD5323017156ED80080DBE9 /* ImageViewManager.m */,
+				ECD5323117156ED80080DBE9 /* ImageViewManagerDelegate.h */,
+				ECD5323217156ED80080DBE9 /* ImageViewManagerRounded.h */,
+				ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */,
+				ECD5323417156ED80080DBE9 /* ImageViewPatern.h */,
+				ECD5323517156ED80080DBE9 /* ImageViewPatern.m */,
+			);
+			path = imageManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +284,12 @@
 				EC3C7F68171473A400737C38 /* ArticleRequest.m in Sources */,
 				EC3C7F6B171473A500737C38 /* Articles.m in Sources */,
 				EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */,
+				ECD5323617156ED80080DBE9 /* AFHTTPImageManagerClient.m in Sources */,
+				ECD5323717156ED80080DBE9 /* C4MAFHTTPClient.m in Sources */,
+				ECD5323817156ED80080DBE9 /* ImageManager.m in Sources */,
+				ECD5323917156ED80080DBE9 /* ImageViewManager.m in Sources */,
+				ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */,
+				ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
