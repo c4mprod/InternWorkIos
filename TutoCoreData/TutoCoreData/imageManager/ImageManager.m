@@ -12,7 +12,7 @@
 #import "ImageManager.h"
 #import "AFImageRequestOperation.h"
 #import "AFHTTPImageManagerClient.h"
-
+#import "NSString+MD5.h"
 
 @implementation ImageManager
 @synthesize mDicoImage;

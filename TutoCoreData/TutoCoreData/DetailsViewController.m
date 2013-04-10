@@ -48,7 +48,6 @@
 {
     [self.imageView release];
     [self.mTableData release];
-    [_imageView release];
     [super dealloc];
 }
 

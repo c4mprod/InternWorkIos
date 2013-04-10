@@ -33,6 +33,7 @@
 		ECD5323917156ED80080DBE9 /* ImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323017156ED80080DBE9 /* ImageViewManager.m */; };
 		ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */; };
 		ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323517156ED80080DBE9 /* ImageViewPatern.m */; };
+		ECD5323E17158EA90080DBE9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5323D17158EA90080DBE9 /* NSString+MD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		ECD5323317156ED80080DBE9 /* ImageViewManagerRounded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewManagerRounded.m; sourceTree = "<group>"; };
 		ECD5323417156ED80080DBE9 /* ImageViewPatern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewPatern.h; sourceTree = "<group>"; };
 		ECD5323517156ED80080DBE9 /* ImageViewPatern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewPatern.m; sourceTree = "<group>"; };
+		ECD5323C17158EA90080DBE9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		ECD5323D17158EA90080DBE9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 				ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */,
 				ECD5322A17156ED80080DBE9 /* C4MAFHTTPClient.h */,
 				ECD5322B17156ED80080DBE9 /* C4MAFHTTPClient.m */,
+				ECD5323C17158EA90080DBE9 /* NSString+MD5.h */,
+				ECD5323D17158EA90080DBE9 /* NSString+MD5.m */,
 				ECD5322C17156ED80080DBE9 /* ImageManager.h */,
 				ECD5322D17156ED80080DBE9 /* ImageManager.m */,
 				ECD5322E17156ED80080DBE9 /* ImageManagerDelegate.h */,
@@ -290,6 +295,7 @@
 				ECD5323917156ED80080DBE9 /* ImageViewManager.m in Sources */,
 				ECD5323A17156ED80080DBE9 /* ImageViewManagerRounded.m in Sources */,
 				ECD5323B17156ED80080DBE9 /* ImageViewPatern.m in Sources */,
+				ECD5323E17158EA90080DBE9 /* NSString+MD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
