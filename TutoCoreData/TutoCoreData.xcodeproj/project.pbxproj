@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E67721760B841299BBCA0B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF9945922A7477E958AB421 /* libPods.a */; };
+		EC3C7F2917146B2800737C38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2817146B2800737C38 /* UIKit.framework */; };
+		EC3C7F2B17146B2800737C38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2A17146B2800737C38 /* Foundation.framework */; };
+		EC3C7F2D17146B2800737C38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2C17146B2800737C38 /* CoreGraphics.framework */; };
+		EC3C7F2F17146B2800737C38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2E17146B2800737C38 /* CoreData.framework */; };
+		EC3C7F3517146B2800737C38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F3317146B2800737C38 /* InfoPlist.strings */; };
+		EC3C7F3717146B2800737C38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F3617146B2800737C38 /* main.m */; };
+		EC3C7F3B17146B2800737C38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F3A17146B2800737C38 /* AppDelegate.m */; };
+		EC3C7F3D17146B2800737C38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F3C17146B2800737C38 /* Default.png */; };
+		EC3C7F3F17146B2800737C38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F3E17146B2800737C38 /* Default@2x.png */; };
+		EC3C7F4117146B2800737C38 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F4017146B2800737C38 /* Default-568h@2x.png */; };
+		EC3C7F4417146B2800737C38 /* TutoCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F4217146B2800737C38 /* TutoCoreData.xcdatamodeld */; };
+		EC3C7F5917146B7300737C38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F5717146B7300737C38 /* ViewController.m */; };
+		EC3C7F5A17146B7300737C38 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F5817146B7300737C38 /* ViewController.xib */; };
+		EC3C7F5E17146E2C00737C38 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F5C17146E2C00737C38 /* TableViewController.m */; };
+		EC3C7F5F17146E2C00737C38 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F5D17146E2C00737C38 /* TableViewController.xib */; };
+		EC3C7F68171473A400737C38 /* ArticleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F67171473A400737C38 /* ArticleRequest.m */; };
+		EC3C7F6B171473A500737C38 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6A171473A500737C38 /* Articles.m */; };
+		EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7F6E17147B3700737C38 /* DetailsViewController.m */; };
+		EC3C7F7117147B3700737C38 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B78610AC6CD447893E4A733 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		DCF9945922A7477E958AB421 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3C7F2517146B2800737C38 /* TutoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3C7F2817146B2800737C38 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EC3C7F2A17146B2800737C38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC3C7F2C17146B2800737C38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC3C7F2E17146B2800737C38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC3C7F3217146B2800737C38 /* TutoCoreData-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TutoCoreData-Info.plist"; sourceTree = "<group>"; };
+		EC3C7F3417146B2800737C38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC3C7F3617146B2800737C38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC3C7F3817146B2800737C38 /* TutoCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TutoCoreData-Prefix.pch"; sourceTree = "<group>"; };
+		EC3C7F3917146B2800737C38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC3C7F3A17146B2800737C38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC3C7F3C17146B2800737C38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EC3C7F3E17146B2800737C38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		EC3C7F4017146B2800737C38 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EC3C7F4317146B2800737C38 /* TutoCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TutoCoreData.xcdatamodel; sourceTree = "<group>"; };
+		EC3C7F5617146B7300737C38 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC3C7F5717146B7300737C38 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC3C7F5817146B7300737C38 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		EC3C7F5B17146E2C00737C38 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		EC3C7F5C17146E2C00737C38 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		EC3C7F5D17146E2C00737C38 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		EC3C7F66171473A400737C38 /* ArticleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleRequest.h; sourceTree = "<group>"; };
+		EC3C7F67171473A400737C38 /* ArticleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleRequest.m; sourceTree = "<group>"; };
+		EC3C7F69171473A500737C38 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		EC3C7F6A171473A500737C38 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
+		EC3C7F6C1714755900737C38 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EC3C7F6D17147B3600737C38 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EC3C7F6E17147B3700737C38 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC3C7F2217146B2800737C38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3C7F2917146B2800737C38 /* UIKit.framework in Frameworks */,
+				EC3C7F2B17146B2800737C38 /* Foundation.framework in Frameworks */,
+				EC3C7F2D17146B2800737C38 /* CoreGraphics.framework in Frameworks */,
+				EC3C7F2F17146B2800737C38 /* CoreData.framework in Frameworks */,
+				4E67721760B841299BBCA0B0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC3C7F1C17146B2800737C38 = {
+			isa = PBXGroup;
+			children = (
+				EC3C7F3017146B2800737C38 /* TutoCoreData */,
+				EC3C7F2717146B2800737C38 /* Frameworks */,
+				EC3C7F2617146B2800737C38 /* Products */,
+				0B78610AC6CD447893E4A733 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		EC3C7F2617146B2800737C38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C7F2517146B2800737C38 /* TutoCoreData.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC3C7F2717146B2800737C38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C7F2817146B2800737C38 /* UIKit.framework */,
+				EC3C7F2A17146B2800737C38 /* Foundation.framework */,
+				EC3C7F2C17146B2800737C38 /* CoreGraphics.framework */,
+				EC3C7F2E17146B2800737C38 /* CoreData.framework */,
+				DCF9945922A7477E958AB421 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC3C7F3017146B2800737C38 /* TutoCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C7F6C1714755900737C38 /* Constants.h */,
+				EC3C7F3917146B2800737C38 /* AppDelegate.h */,
+				EC3C7F3A17146B2800737C38 /* AppDelegate.m */,
+				EC3C7F5617146B7300737C38 /* ViewController.h */,
+				EC3C7F5717146B7300737C38 /* ViewController.m */,
+				EC3C7F5817146B7300737C38 /* ViewController.xib */,
+				EC3C7F5B17146E2C00737C38 /* TableViewController.h */,
+				EC3C7F5C17146E2C00737C38 /* TableViewController.m */,
+				EC3C7F5D17146E2C00737C38 /* TableViewController.xib */,
+				EC3C7F6D17147B3600737C38 /* DetailsViewController.h */,
+				EC3C7F6E17147B3700737C38 /* DetailsViewController.m */,
+				EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */,
+				EC3C7F69171473A500737C38 /* Articles.h */,
+				EC3C7F6A171473A500737C38 /* Articles.m */,
+				EC3C7F66171473A400737C38 /* ArticleRequest.h */,
+				EC3C7F67171473A400737C38 /* ArticleRequest.m */,
+				EC3C7F4217146B2800737C38 /* TutoCoreData.xcdatamodeld */,
+				EC3C7F3117146B2800737C38 /* Supporting Files */,
+			);
+			path = TutoCoreData;
+			sourceTree = "<group>";
+		};
+		EC3C7F3117146B2800737C38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C7F3217146B2800737C38 /* TutoCoreData-Info.plist */,
+				EC3C7F3317146B2800737C38 /* InfoPlist.strings */,
+				EC3C7F3617146B2800737C38 /* main.m */,
+				EC3C7F3817146B2800737C38 /* TutoCoreData-Prefix.pch */,
+				EC3C7F3C17146B2800737C38 /* Default.png */,
+				EC3C7F3E17146B2800737C38 /* Default@2x.png */,
+				EC3C7F4017146B2800737C38 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC3C7F2417146B2800737C38 /* TutoCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3C7F5317146B2800737C38 /* Build configuration list for PBXNativeTarget "TutoCoreData" */;
+			buildPhases = (
+				EC3C7F2117146B2800737C38 /* Sources */,
+				EC3C7F2217146B2800737C38 /* Frameworks */,
+				EC3C7F2317146B2800737C38 /* Resources */,
+				457AB15B01A64E759C628EFB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TutoCoreData;
+			productName = TutoCoreData;
+			productReference = EC3C7F2517146B2800737C38 /* TutoCoreData.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC3C7F1D17146B2800737C38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Intern;
+			};
+			buildConfigurationList = EC3C7F2017146B2800737C38 /* Build configuration list for PBXProject "TutoCoreData" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC3C7F1C17146B2800737C38;
+			productRefGroup = EC3C7F2617146B2800737C38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC3C7F2417146B2800737C38 /* TutoCoreData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC3C7F2317146B2800737C38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3C7F3517146B2800737C38 /* InfoPlist.strings in Resources */,
+				EC3C7F3D17146B2800737C38 /* Default.png in Resources */,
+				EC3C7F3F17146B2800737C38 /* Default@2x.png in Resources */,
+				EC3C7F4117146B2800737C38 /* Default-568h@2x.png in Resources */,
+				EC3C7F5A17146B7300737C38 /* ViewController.xib in Resources */,
+				EC3C7F5F17146E2C00737C38 /* TableViewController.xib in Resources */,
+				EC3C7F7117147B3700737C38 /* DetailsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		457AB15B01A64E759C628EFB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC3C7F2117146B2800737C38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3C7F3717146B2800737C38 /* main.m in Sources */,
+				EC3C7F3B17146B2800737C38 /* AppDelegate.m in Sources */,
+				EC3C7F4417146B2800737C38 /* TutoCoreData.xcdatamodeld in Sources */,
+				EC3C7F5917146B7300737C38 /* ViewController.m in Sources */,
+				EC3C7F5E17146E2C00737C38 /* TableViewController.m in Sources */,
+				EC3C7F68171473A400737C38 /* ArticleRequest.m in Sources */,
+				EC3C7F6B171473A500737C38 /* Articles.m in Sources */,
+				EC3C7F7017147B3700737C38 /* DetailsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC3C7F3317146B2800737C38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC3C7F3417146B2800737C38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC3C7F5117146B2800737C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC3C7F5217146B2800737C38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC3C7F5417146B2800737C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B78610AC6CD447893E4A733 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TutoCoreData/TutoCoreData-Prefix.pch";
+				INFOPLIST_FILE = "TutoCoreData/TutoCoreData-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC3C7F5517146B2800737C38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B78610AC6CD447893E4A733 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TutoCoreData/TutoCoreData-Prefix.pch";
+				INFOPLIST_FILE = "TutoCoreData/TutoCoreData-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC3C7F2017146B2800737C38 /* Build configuration list for PBXProject "TutoCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3C7F5117146B2800737C38 /* Debug */,
+				EC3C7F5217146B2800737C38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC3C7F5317146B2800737C38 /* Build configuration list for PBXNativeTarget "TutoCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3C7F5417146B2800737C38 /* Debug */,
+				EC3C7F5517146B2800737C38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC3C7F4217146B2800737C38 /* TutoCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC3C7F4317146B2800737C38 /* TutoCoreData.xcdatamodel */,
+			);
+			currentVersion = EC3C7F4317146B2800737C38 /* TutoCoreData.xcdatamodel */;
+			path = TutoCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC3C7F1D17146B2800737C38 /* Project object */;
+}

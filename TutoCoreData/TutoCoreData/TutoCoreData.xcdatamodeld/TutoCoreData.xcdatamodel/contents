@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ArticleRequest" representedClassName="ArticleRequest" syncable="YES">
+        <attribute name="finish" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Articles" inverseName="articleRequest" inverseEntity="Articles" syncable="YES"/>
+    </entity>
+    <entity name="Articles" representedClassName="Articles" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articleRequest" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ArticleRequest" inverseName="articles" inverseEntity="ArticleRequest" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ArticleRequest" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Articles" positionX="603" positionY="381" width="128" height="105"/>
+    </elements>
+</model>
