@@ -52,7 +52,7 @@
     [self.mUser release];
     [self.mSearchRequest release];
     [self.mTableArticles release];
-    [_mFetchedResultsController release];
+    //[_mFetchedResultsController release];
     [_managedObjectContext release];
     [super dealloc];
 }

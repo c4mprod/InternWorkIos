@@ -24,10 +24,7 @@
 @property (nonatomic, retain) NSString *mSearchRequest;
 @property (nonatomic, retain) ArticleRequest *mArticleRequest;
 @property (nonatomic, retain) NSMutableArray *mTableArticles;
-
-@property (strong, nonatomic) NSFetchedResultsController *mFetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil request:(NSString *)_request user:(Users *)_user;
 
 @end

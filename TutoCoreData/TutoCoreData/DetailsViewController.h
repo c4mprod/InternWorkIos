@@ -16,7 +16,6 @@
 }
 @property (retain, nonatomic) IBOutlet ImageViewManager *imageView;
 @property (retain, nonatomic) NSMutableArray *mTableData;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil articles:(NSMutableArray*)_articles index:(int)_index;
 
 @end

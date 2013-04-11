@@ -10,6 +10,7 @@
 #import "ViewControllerLogin.h"
 #import "ViewController.h"
 #import "Users.h"
+#import "NSString+MD5.h"
 
 @implementation ViewControllerLogin
 @synthesize mUser;
@@ -55,7 +56,7 @@
 {
     self.mUser          = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:_managedObjectContext];
     self.mUser.login    = _loginTextField.text;
-    self.mUser.password = _passwordTextField.text;
+    self.mUser.password = [NSString md5:_passwordTextField.text];
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error])
@@ -79,7 +80,7 @@
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {      
         self.mUser = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
-        if ([self.mUser.password isEqualToString:_passwordTextField.text])
+        if ([[NSString md5:self.mUser.password] isEqualToString:_passwordTextField.text])
         {
             if (![_managedObjectContext save:&error])
             {
@@ -88,8 +89,6 @@
             }
             return TRUE;
         }
-        NSLog(@"%@", self.mUser.password);
-        NSLog(@"%@", _passwordTextField.text);
         [self alertViewMessage:@"Error" message:@"Wrong password"];
         return FALSE;
     }
