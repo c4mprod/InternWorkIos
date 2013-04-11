@@ -67,6 +67,7 @@
 		EC3C7F6D17147B3600737C38 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EC3C7F6E17147B3700737C38 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EC3C7F6F17147B3700737C38 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		ECC2AA0A1716ADCB003B69F3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ECD5322817156ED80080DBE9 /* AFHTTPImageManagerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPImageManagerClient.h; sourceTree = "<group>"; };
 		ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPImageManagerClient.m; sourceTree = "<group>"; };
 		ECD5322A17156ED80080DBE9 /* C4MAFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4MAFHTTPClient.h; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 				EC3C7F2C17146B2800737C38 /* CoreGraphics.framework */,
 				EC3C7F2E17146B2800737C38 /* CoreData.framework */,
 				DCF9945922A7477E958AB421 /* libPods.a */,
+				ECC2AA0A1716ADCB003B69F3 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
