@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ApplicationTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>LogicTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>TutoCoreData.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,31 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>EC1BB7821716B70A00F65634</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC3009F41716BC6B006C862F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC300A0A1716BCA3006C862F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC300A221716BD4B006C862F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC300A901716C321006C862F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EC3C7F2417146B2800737C38</key>
 		<dict>
 			<key>primary</key>
@@ -22,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>ECA47E421716C80A00C45199</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>ECC2AA081716ADCB003B69F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>ECC2AA1F1716AFE7003B69F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC409281716BA43008F8417</key>
 		<dict>
 			<key>primary</key>
 			<true/>

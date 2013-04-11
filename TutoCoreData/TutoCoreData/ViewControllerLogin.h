@@ -8,7 +8,7 @@
 
 @class Users;
 
-@interface ViewControllerLogin : UIViewController <UITextFieldDelegate, NSFetchedResultsControllerDelegate>
+@interface ViewControllerLogin : UIViewController <UITextFieldDelegate>
 {
     Users *mUser;
 }

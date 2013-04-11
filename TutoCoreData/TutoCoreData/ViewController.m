@@ -37,7 +37,7 @@
 - (void)dealloc
 {
     [_searchTextField release];
-    [self.mVcUser release];
+    [mVcUser release];
     [super dealloc];
 }
 
@@ -67,7 +67,7 @@
     if (textField.text.length != 0)
     {
         [textField resignFirstResponder];
-        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] user:mVcUser];
+        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] user:self.mVcUser];
         
         [self.navigationController pushViewController:tableViewController animated:true];
         [tableViewController release];

@@ -80,7 +80,7 @@
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {      
         self.mUser = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
-        if ([[NSString md5:self.mUser.password] isEqualToString:_passwordTextField.text])
+        if ([self.mUser.password isEqualToString:[NSString md5:_passwordTextField.text]])
         {
             if (![_managedObjectContext save:&error])
             {

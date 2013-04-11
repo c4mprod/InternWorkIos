@@ -31,6 +31,7 @@
         self.mArticleRequest      = nil;
         AppDelegate *appDelegate  = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.managedObjectContext = appDelegate.managedObjectContext;
+        self.mTableArticles       = [NSMutableArray array];
     }
     return self;
 }
@@ -38,7 +39,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mTableArticles = [NSMutableArray array];
     [self dataCoreArticleRequest];
 }
 
@@ -49,9 +49,9 @@
 
 - (void)dealloc {
     [_mTableView release];
-    [self.mUser release];
-    [self.mSearchRequest release];
-    [self.mTableArticles release];
+    [mUser release];
+    [mSearchRequest release];
+    [mTableArticles release];
     [_managedObjectContext release];
     [super dealloc];
 }
@@ -70,7 +70,7 @@
 {
     NSFetchRequest *query       = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
-    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"user = %@ AND value = %@", self.mUser, self.mSearchRequest];
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"user = %@ AND value = %@", mUser, mSearchRequest];
     [query setEntity:entity];
     [query setPredicate:predicate];
     [query setFetchLimit:1];
@@ -78,9 +78,9 @@
     NSError *error = nil;
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {
-        self.mArticleRequest = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
+        mArticleRequest = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
         
-        [self.mTableArticles addObjectsFromArray: self.mArticleRequest.articles.allObjects];
+        [mTableArticles addObjectsFromArray: mArticleRequest.articles.allObjects];
         NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"index" ascending:YES] autorelease];
         [self.mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         
@@ -95,11 +95,11 @@
     }
     else
     {
-        self.mArticleRequest             = [NSEntityDescription insertNewObjectForEntityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
-        self.mArticleRequest.user        = self.mUser;
-        self.mArticleRequest.startIndex  = [NSNumber numberWithInt:0];
-        self.mArticleRequest.value       = self.mSearchRequest;
-        self.mArticleRequest.finish      = [NSNumber numberWithBool:FALSE];
+        mArticleRequest             = [NSEntityDescription insertNewObjectForEntityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
+        mArticleRequest.user        = self.mUser;
+        mArticleRequest.startIndex  = [NSNumber numberWithInt:0];
+        mArticleRequest.value       = self.mSearchRequest;
+        mArticleRequest.finish      = [NSNumber numberWithBool:FALSE];
         
         if (![_managedObjectContext save:&error])
         {
@@ -121,11 +121,11 @@
     [spinner startAnimating];
     [alertView show];
     
-    if (![self.mArticleRequest.finish boolValue])
+    if (![mArticleRequest.finish boolValue])
     {
-        NSString *urlString      = [NSString stringWithFormat:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=%d&start=%@&q=", mResultPerPage, self.mArticleRequest.startIndex];
+        NSString *urlString      = [NSString stringWithFormat:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=%d&start=%@&q=", mResultPerPage, mArticleRequest.startIndex];
         NSMutableString *baseUrl = [NSMutableString stringWithString:urlString];
-        [baseUrl appendString:self.mArticleRequest.value];
+        [baseUrl appendString:mArticleRequest.value];
         
         NSURL *url                        = [NSURL URLWithString:baseUrl];
         NSURLRequest *request             = [NSURLRequest requestWithURL:url];
@@ -134,7 +134,7 @@
         {
             if ([[JSON valueForKey:@"responseStatus"] intValue] == 400)
             {
-                self.mArticleRequest.finish = [NSNumber numberWithBool:TRUE];
+                mArticleRequest.finish = [NSNumber numberWithBool:TRUE];
                 [alertView dismissWithClickedButtonIndex:0 animated:YES];
                 [_mTableView reloadData];
             }
@@ -156,7 +156,7 @@
                         lArticle.title     = [[lArticleDic objectForKey:JSON_TITLE] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         lArticle.urlImage  = [[lArticleDic objectForKey:JSON_URL] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         lArticle.index     = [NSNumber numberWithInt:[self.mArticleRequest.startIndex intValue] + i];
-                        [self.mArticleRequest addArticlesObject:lArticle];
+                        [mArticleRequest addArticlesObject:lArticle];
                         if (![_managedObjectContext save:&error])
                         {
                             [alertView dismissWithClickedButtonIndex:0 animated:YES];
@@ -165,14 +165,14 @@
                         else
                         {
                             i++;
-                            [self.mTableArticles addObject:lArticle];
+                            [mTableArticles addObject:lArticle];
                         }
                     }
                     
                     NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"index" ascending:YES] autorelease];
-                    [self.mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+                    [mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
                     
-                    [self.mTableView reloadData];
+                    [_mTableView reloadData];
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
                 }
             }
@@ -196,9 +196,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if (![self.mArticleRequest.finish boolValue])
+    if (![mArticleRequest.finish boolValue])
     {
-        if (indexPath.row < self.mTableArticles.count)
+        if (indexPath.row < mTableArticles.count)
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"Article"];
             if (!cell)
@@ -206,7 +206,7 @@
                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Article"] autorelease];
             }
             
-            cell.textLabel.text = [[self.mTableArticles objectAtIndex:indexPath.row] title];
+            cell.textLabel.text = [[mTableArticles objectAtIndex:indexPath.row] title];
             cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
         }
         else
@@ -227,18 +227,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.mTableArticles.count)
+    if (mTableArticles.count)
     {
-        return [self.mArticleRequest.finish boolValue] ? self.mTableArticles.count : self.mTableArticles.count + 1;
+        return [mArticleRequest.finish boolValue] ? mTableArticles.count : mTableArticles.count + 1;
     }
     return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == self.mTableArticles.count)
+    if (indexPath.row == mTableArticles.count)
     {
-        self.mArticleRequest.startIndex = [NSNumber numberWithInt:[self.mArticleRequest.startIndex intValue] + mResultPerPage];
+        mArticleRequest.startIndex = [NSNumber numberWithInt:[mArticleRequest.startIndex intValue] + mResultPerPage];
         [self getImageViaJSON];
     }
     else

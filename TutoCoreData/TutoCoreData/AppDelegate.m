@@ -21,16 +21,16 @@
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
     [_navigationController release];
-    [_viewController release];
+    [_viewControllerLogin release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {  
     self.window                    = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.viewController            = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
-    self.self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
-    self.window.rootViewController = self.self.navigationController;
+    self.viewControllerLogin       = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
+    self.navigationController      = [[[UINavigationController alloc] initWithRootViewController:self.viewControllerLogin] autorelease];
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
     return YES;

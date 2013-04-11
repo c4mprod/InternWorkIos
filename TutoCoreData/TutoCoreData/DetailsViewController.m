@@ -46,21 +46,21 @@
 
 - (void)dealloc
 {
-    [self.imageView release];
-    [self.mTableData release];
+    [_imageView release];
+    [mTableData release];
     [super dealloc];
 }
 
 - (void)loadImage
 {
-    Articles *article    = [self.mTableData objectAtIndex:index];
+    Articles *article    = [mTableData objectAtIndex:index];
     self.title           = article.title;
-    self.imageView.image = [[ImageManager sharedImageManager] getImageNamed:article.urlImage withDelegate:self.imageView];
+    _imageView.image = [[ImageManager sharedImageManager] getImageNamed:article.urlImage withDelegate:_imageView];
 }
 
 - (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer
 {
-    if (index < self.mTableData.count - 1)
+    if (index < mTableData.count - 1)
     {
         index++;
         [self loadImage];
