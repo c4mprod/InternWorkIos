@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
-#import "ViewControllerLoginTest.h"
+#import "ViewControllerLoginAppTest.h"
 #import "AppDelegate.h"
 #import "ViewControllerLogin.h"
 

@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E67721760B841299BBCA0B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF9945922A7477E958AB421 /* libPods.a */; };
-		EC300A921716C321006C862F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC2AA0A1716ADCB003B69F3 /* SenTestingKit.framework */; };
-		EC300A931716C321006C862F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2817146B2800737C38 /* UIKit.framework */; };
-		EC300A941716C321006C862F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2A17146B2800737C38 /* Foundation.framework */; };
-		EC300A9A1716C321006C862F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC300A981716C321006C862F /* InfoPlist.strings */; };
-		EC300A9D1716C321006C862F /* LogicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC300A9C1716C321006C862F /* LogicTest.m */; };
 		EC3C7F2917146B2800737C38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2817146B2800737C38 /* UIKit.framework */; };
 		EC3C7F2B17146B2800737C38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2A17146B2800737C38 /* Foundation.framework */; };
 		EC3C7F2D17146B2800737C38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2C17146B2800737C38 /* CoreGraphics.framework */; };
@@ -34,11 +29,11 @@
 		ECA47E451716C80A00C45199 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2817146B2800737C38 /* UIKit.framework */; };
 		ECA47E461716C80A00C45199 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3C7F2A17146B2800737C38 /* Foundation.framework */; };
 		ECA47E4C1716C80A00C45199 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECA47E4A1716C80A00C45199 /* InfoPlist.strings */; };
-		ECA47E4F1716C80A00C45199 /* AppDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47E4E1716C80A00C45199 /* AppDelegateTest.m */; };
-		ECA47E561716E0EE00C45199 /* ViewControllerLoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47E551716E0EE00C45199 /* ViewControllerLoginTest.m */; };
-		ECCD448417180725005365B9 /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCD448317180725005365B9 /* ViewControllerTest.m */; };
-		ECCFD747171BE64F009927A4 /* TableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCFD746171BE64F009927A4 /* TableViewControllerTest.m */; };
-		ECCFD74A171C01F6009927A4 /* DetailsViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCFD749171C01F6009927A4 /* DetailsViewControllerTest.m */; };
+		ECC02669171C636E008DDFBA /* AppDelegateAppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47E4E1716C80A00C45199 /* AppDelegateAppTest.m */; };
+		ECC0266A171C636E008DDFBA /* ViewControllerLoginAppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47E551716E0EE00C45199 /* ViewControllerLoginAppTest.m */; };
+		ECC0266B171C636E008DDFBA /* ViewControllerAppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCD448317180725005365B9 /* ViewControllerAppTest.m */; };
+		ECC0266C171C636E008DDFBA /* TableViewControllerAppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCFD746171BE64F009927A4 /* TableViewControllerAppTest.m */; };
+		ECC0266D171C636E008DDFBA /* DetailsViewControllerAppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCFD749171C01F6009927A4 /* DetailsViewControllerAppTest.m */; };
 		ECD5323617156ED80080DBE9 /* AFHTTPImageManagerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */; };
 		ECD5323717156ED80080DBE9 /* C4MAFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322B17156ED80080DBE9 /* C4MAFHTTPClient.m */; };
 		ECD5323817156ED80080DBE9 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD5322D17156ED80080DBE9 /* ImageManager.m */; };
@@ -53,25 +48,9 @@
 		ECD5325A1715AD7B0080DBE9 /* ArticleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD532591715AD7A0080DBE9 /* ArticleRequest.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EC300AA21716C341006C862F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC3C7F1D17146B2800737C38 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC3C7F2417146B2800737C38;
-			remoteInfo = TutoCoreData;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0B78610AC6CD447893E4A733 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DCF9945922A7477E958AB421 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC300A911716C321006C862F /* LogicTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC300A971716C321006C862F /* LogicTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTest-Info.plist"; sourceTree = "<group>"; };
-		EC300A991716C321006C862F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EC300A9B1716C321006C862F /* LogicTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogicTest.h; sourceTree = "<group>"; };
-		EC300A9C1716C321006C862F /* LogicTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogicTest.m; sourceTree = "<group>"; };
-		EC300A9E1716C321006C862F /* LogicTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicTest-Prefix.pch"; sourceTree = "<group>"; };
 		EC3C7F2517146B2800737C38 /* TutoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3C7F2817146B2800737C38 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC3C7F2A17146B2800737C38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,18 +79,18 @@
 		ECA47E431716C80A00C45199 /* ApplicationTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA47E491716C80A00C45199 /* ApplicationTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ApplicationTest-Info.plist"; sourceTree = "<group>"; };
 		ECA47E4B1716C80A00C45199 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ECA47E4D1716C80A00C45199 /* AppDelegateTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateTest.h; sourceTree = "<group>"; };
-		ECA47E4E1716C80A00C45199 /* AppDelegateTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTest.m; sourceTree = "<group>"; };
+		ECA47E4D1716C80A00C45199 /* AppDelegateAppTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateAppTest.h; sourceTree = "<group>"; };
+		ECA47E4E1716C80A00C45199 /* AppDelegateAppTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppTest.m; sourceTree = "<group>"; };
 		ECA47E501716C80A00C45199 /* ApplicationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApplicationTest-Prefix.pch"; sourceTree = "<group>"; };
-		ECA47E541716E0EE00C45199 /* ViewControllerLoginTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLoginTest.h; sourceTree = "<group>"; };
-		ECA47E551716E0EE00C45199 /* ViewControllerLoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLoginTest.m; sourceTree = "<group>"; };
+		ECA47E541716E0EE00C45199 /* ViewControllerLoginAppTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLoginAppTest.h; sourceTree = "<group>"; };
+		ECA47E551716E0EE00C45199 /* ViewControllerLoginAppTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLoginAppTest.m; sourceTree = "<group>"; };
 		ECC2AA0A1716ADCB003B69F3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		ECCD448217180725005365B9 /* ViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTest.h; sourceTree = "<group>"; };
-		ECCD448317180725005365B9 /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
-		ECCFD745171BE64F009927A4 /* TableViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerTest.h; sourceTree = "<group>"; };
-		ECCFD746171BE64F009927A4 /* TableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerTest.m; sourceTree = "<group>"; };
-		ECCFD748171C01F6009927A4 /* DetailsViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewControllerTest.h; sourceTree = "<group>"; };
-		ECCFD749171C01F6009927A4 /* DetailsViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewControllerTest.m; sourceTree = "<group>"; };
+		ECCD448217180725005365B9 /* ViewControllerAppTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAppTest.h; sourceTree = "<group>"; };
+		ECCD448317180725005365B9 /* ViewControllerAppTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAppTest.m; sourceTree = "<group>"; };
+		ECCFD745171BE64F009927A4 /* TableViewControllerAppTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerAppTest.h; sourceTree = "<group>"; };
+		ECCFD746171BE64F009927A4 /* TableViewControllerAppTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerAppTest.m; sourceTree = "<group>"; };
+		ECCFD748171C01F6009927A4 /* DetailsViewControllerAppTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewControllerAppTest.h; sourceTree = "<group>"; };
+		ECCFD749171C01F6009927A4 /* DetailsViewControllerAppTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewControllerAppTest.m; sourceTree = "<group>"; };
 		ECD5322817156ED80080DBE9 /* AFHTTPImageManagerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPImageManagerClient.h; sourceTree = "<group>"; };
 		ECD5322917156ED80080DBE9 /* AFHTTPImageManagerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPImageManagerClient.m; sourceTree = "<group>"; };
 		ECD5322A17156ED80080DBE9 /* C4MAFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4MAFHTTPClient.h; sourceTree = "<group>"; };
@@ -140,16 +119,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EC300A8D1716C321006C862F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC300A921716C321006C862F /* SenTestingKit.framework in Frameworks */,
-				EC300A931716C321006C862F /* UIKit.framework in Frameworks */,
-				EC300A941716C321006C862F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EC3C7F2217146B2800737C38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,32 +144,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC300A951716C321006C862F /* LogicTest */ = {
-			isa = PBXGroup;
-			children = (
-				EC300A9B1716C321006C862F /* LogicTest.h */,
-				EC300A9C1716C321006C862F /* LogicTest.m */,
-				EC300A961716C321006C862F /* Supporting Files */,
-			);
-			path = LogicTest;
-			sourceTree = "<group>";
-		};
-		EC300A961716C321006C862F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EC300A971716C321006C862F /* LogicTest-Info.plist */,
-				EC300A981716C321006C862F /* InfoPlist.strings */,
-				EC300A9E1716C321006C862F /* LogicTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		EC3C7F1C17146B2800737C38 = {
 			isa = PBXGroup;
 			children = (
 				EC3C7F3017146B2800737C38 /* TutoCoreData */,
-				EC300A951716C321006C862F /* LogicTest */,
-				ECA47E471716C80A00C45199 /* ApplicationTest */,
+				ECA47E471716C80A00C45199 /* UnitTest */,
 				EC3C7F2717146B2800737C38 /* Frameworks */,
 				EC3C7F2617146B2800737C38 /* Products */,
 				0B78610AC6CD447893E4A733 /* Pods.xcconfig */,
@@ -211,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				EC3C7F2517146B2800737C38 /* TutoCoreData.app */,
-				EC300A911716C321006C862F /* LogicTest.octest */,
 				ECA47E431716C80A00C45199 /* ApplicationTest.octest */,
 			);
 			name = Products;
@@ -275,21 +222,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ECA47E471716C80A00C45199 /* ApplicationTest */ = {
+		ECA47E471716C80A00C45199 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
-				ECA47E4D1716C80A00C45199 /* AppDelegateTest.h */,
-				ECA47E4E1716C80A00C45199 /* AppDelegateTest.m */,
-				ECA47E541716E0EE00C45199 /* ViewControllerLoginTest.h */,
-				ECA47E551716E0EE00C45199 /* ViewControllerLoginTest.m */,
-				ECCD448217180725005365B9 /* ViewControllerTest.h */,
-				ECCD448317180725005365B9 /* ViewControllerTest.m */,
-				ECCFD745171BE64F009927A4 /* TableViewControllerTest.h */,
-				ECCFD746171BE64F009927A4 /* TableViewControllerTest.m */,
-				ECCFD748171C01F6009927A4 /* DetailsViewControllerTest.h */,
-				ECCFD749171C01F6009927A4 /* DetailsViewControllerTest.m */,
+				ECA47E4D1716C80A00C45199 /* AppDelegateAppTest.h */,
+				ECA47E4E1716C80A00C45199 /* AppDelegateAppTest.m */,
+				ECA47E541716E0EE00C45199 /* ViewControllerLoginAppTest.h */,
+				ECA47E551716E0EE00C45199 /* ViewControllerLoginAppTest.m */,
+				ECCD448217180725005365B9 /* ViewControllerAppTest.h */,
+				ECCD448317180725005365B9 /* ViewControllerAppTest.m */,
+				ECCFD745171BE64F009927A4 /* TableViewControllerAppTest.h */,
+				ECCFD746171BE64F009927A4 /* TableViewControllerAppTest.m */,
+				ECCFD748171C01F6009927A4 /* DetailsViewControllerAppTest.h */,
+				ECCFD749171C01F6009927A4 /* DetailsViewControllerAppTest.m */,
 				ECA47E481716C80A00C45199 /* Supporting Files */,
 			);
+			name = UnitTest;
 			path = ApplicationTest;
 			sourceTree = "<group>";
 		};
@@ -329,25 +277,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC300A901716C321006C862F /* LogicTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC300A9F1716C321006C862F /* Build configuration list for PBXNativeTarget "LogicTest" */;
-			buildPhases = (
-				EC300A8C1716C321006C862F /* Sources */,
-				EC300A8D1716C321006C862F /* Frameworks */,
-				EC300A8E1716C321006C862F /* Resources */,
-				EC300A8F1716C321006C862F /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EC300AA31716C341006C862F /* PBXTargetDependency */,
-			);
-			name = LogicTest;
-			productName = LogicTest;
-			productReference = EC300A911716C321006C862F /* LogicTest.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		EC3C7F2417146B2800737C38 /* TutoCoreData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC3C7F5317146B2800737C38 /* Build configuration list for PBXNativeTarget "TutoCoreData" */;
@@ -366,9 +295,9 @@
 			productReference = EC3C7F2517146B2800737C38 /* TutoCoreData.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ECA47E421716C80A00C45199 /* ApplicationTest */ = {
+		ECA47E421716C80A00C45199 /* UnitTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECA47E531716C80A00C45199 /* Build configuration list for PBXNativeTarget "ApplicationTest" */;
+			buildConfigurationList = ECA47E531716C80A00C45199 /* Build configuration list for PBXNativeTarget "UnitTest" */;
 			buildPhases = (
 				ECA47E3E1716C80A00C45199 /* Sources */,
 				ECA47E3F1716C80A00C45199 /* Frameworks */,
@@ -379,7 +308,7 @@
 			);
 			dependencies = (
 			);
-			name = ApplicationTest;
+			name = UnitTest;
 			productName = ApplicationTest;
 			productReference = ECA47E431716C80A00C45199 /* ApplicationTest.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -406,21 +335,12 @@
 			projectRoot = "";
 			targets = (
 				EC3C7F2417146B2800737C38 /* TutoCoreData */,
-				EC300A901716C321006C862F /* LogicTest */,
-				ECA47E421716C80A00C45199 /* ApplicationTest */,
+				ECA47E421716C80A00C45199 /* UnitTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EC300A8E1716C321006C862F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC300A9A1716C321006C862F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EC3C7F2317146B2800737C38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,19 +381,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
-		EC300A8F1716C321006C862F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		ECA47E411716C80A00C45199 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,14 +397,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC300A8C1716C321006C862F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC300A9D1716C321006C862F /* LogicTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EC3C7F2117146B2800737C38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,33 +425,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA47E4F1716C80A00C45199 /* AppDelegateTest.m in Sources */,
-				ECA47E561716E0EE00C45199 /* ViewControllerLoginTest.m in Sources */,
-				ECCD448417180725005365B9 /* ViewControllerTest.m in Sources */,
-				ECCFD747171BE64F009927A4 /* TableViewControllerTest.m in Sources */,
-				ECCFD74A171C01F6009927A4 /* DetailsViewControllerTest.m in Sources */,
+				ECC02669171C636E008DDFBA /* AppDelegateAppTest.m in Sources */,
+				ECC0266A171C636E008DDFBA /* ViewControllerLoginAppTest.m in Sources */,
+				ECC0266B171C636E008DDFBA /* ViewControllerAppTest.m in Sources */,
+				ECC0266C171C636E008DDFBA /* TableViewControllerAppTest.m in Sources */,
+				ECC0266D171C636E008DDFBA /* DetailsViewControllerAppTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		EC300AA31716C341006C862F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC3C7F2417146B2800737C38 /* TutoCoreData */;
-			targetProxy = EC300AA21716C341006C862F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		EC300A981716C321006C862F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC300A991716C321006C862F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		EC3C7F3317146B2800737C38 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -572,36 +455,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EC300AA01716C321006C862F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LogicTest/LogicTest-Prefix.pch";
-				INFOPLIST_FILE = "LogicTest/LogicTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		EC300AA11716C321006C862F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LogicTest/LogicTest-Prefix.pch";
-				INFOPLIST_FILE = "LogicTest/LogicTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		EC3C7F5117146B2800737C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -719,15 +572,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC300A9F1716C321006C862F /* Build configuration list for PBXNativeTarget "LogicTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC300AA01716C321006C862F /* Debug */,
-				EC300AA11716C321006C862F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		EC3C7F2017146B2800737C38 /* Build configuration list for PBXProject "TutoCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -746,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECA47E531716C80A00C45199 /* Build configuration list for PBXNativeTarget "ApplicationTest" */ = {
+		ECA47E531716C80A00C45199 /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECA47E511716C80A00C45199 /* Debug */,

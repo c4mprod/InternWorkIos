@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
-#import "AppDelegateTest.h"
+#import "AppDelegateAppTest.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegateTest
