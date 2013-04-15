@@ -10,6 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "Articles.h"
 #import "ImageManager.h"
+#import "ImageViewManager.h"
 
 @implementation DetailsViewController
 @synthesize mTableData;
@@ -55,7 +56,7 @@
 {
     Articles *article    = [mTableData objectAtIndex:index];
     self.title           = article.title;
-    _imageView.image = [[ImageManager sharedImageManager] getImageNamed:article.urlImage withDelegate:_imageView];
+    self.imageView.image = [[ImageManager sharedImageManager] getImageNamed:article.urlImage withDelegate:_imageView];
 }
 
 - (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer

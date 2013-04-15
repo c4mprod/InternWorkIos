@@ -7,69 +7,65 @@
 //
 
 #import "ViewControllerLoginTest.h"
+#import "AppDelegate.h"
 #import "ViewControllerLogin.h"
-#import "ViewController.h"
 
 @implementation ViewControllerLoginTest
-@synthesize mViewControllerLogin;
-@synthesize mNavigationController;
-@synthesize mManagedObjectContext;
 
 - (void)setUp
 {
     [super setUp];
-    UIApplication *application = [UIApplication sharedApplication];
-    AppDelegate *appDelegate   = [application delegate];
-    UIWindow *window           = [appDelegate window];
-    self.mNavigationController  = (UINavigationController *)[window rootViewController];
-    self.mViewControllerLogin  = [self.mNavigationController.viewControllers objectAtIndex:0];
-    self.mManagedObjectContext = appDelegate.managedObjectContext;
+    // Référence au rootViewController de l'application 
+    UIApplication *application                   = [UIApplication sharedApplication];
+    AppDelegate *appDelegate                     = [application delegate];
+    UIWindow *window                             = [appDelegate window];
+    UINavigationController *navigationController = (UINavigationController *)[window rootViewController];
     
-    [mViewControllerLogin.loginTextField setText:@"test"];
-    [mViewControllerLogin.passwordTextField setText:@"test"];
-    [mViewControllerLogin textFieldShouldReturn:mViewControllerLogin.passwordTextField];
+    // Référence à la nouvelle vue visible: ViewControllerLogin
+    self.mViewControllerLogin = (ViewControllerLogin *)navigationController.visibleViewController;
+    [_mViewControllerLogin view];
+    
+    // Référence aux IBOutlet présents dans la vue ViewControllerLogin
+    self.mLoginTextField      = _mViewControllerLogin.loginTextField;
+    self.mPasswordTextField   = _mViewControllerLogin.passwordTextField;
 }
 
 - (void)tearDown
 {
-    [mViewControllerLogin release];
-    [mNavigationController release];
-    [mManagedObjectContext release];
+    [_mViewControllerLogin release];
+    [_mLoginTextField release];
+    [_mPasswordTextField release];
     [super tearDown];
 }
 
 - (void)test_ViewControllerLogin_NotNil
 {
-    STAssertNotNil(mViewControllerLogin, @"ViewControllerLogin is not set");
+    STAssertNotNil(_mViewControllerLogin, @"ViewControllerLogin is not set");
 }
-
-
-- (void)test_ViewControllerLogin_Instance
-{
-    STAssertFalse([[mViewControllerLogin class] isKindOfClass:[ViewControllerLogin class]], @"ViewControllerLogin class is bad");
-}
-
  
+- (void)test_ViewControllerLogin_Class
+{
+    STAssertFalse([[_mViewControllerLogin class] isKindOfClass:[ViewControllerLogin class]], @"ViewControllerLogin is an instance of the wrong class");
+}
+
 - (void)test_LoginTextField_NotNil
 {
-    STAssertNotNil(mViewControllerLogin.loginTextField, @"LoginTextField IBOutlet not connected");
+    STAssertNotNil(_mLoginTextField, @"LoginTextField IBOutlet not connected");
 }
 
+- (void)test_LoginTextField_Class
+{
+    STAssertFalse([[_mLoginTextField class] isKindOfClass:[UITextField class]], @"LoginTextField is an instance of the wrong class");
+}
 
 - (void)test_PasswordTextField_NotNil
 {
-    STAssertNotNil(mViewControllerLogin.passwordTextField, @"PasswordTextField IBOutlet not connected");
+    STAssertNotNil(_mPasswordTextField, @"PasswordTextField IBOutlet not connected");
 }
 
-- (void)test_managedObjectContext_NotNil
+- (void)test_PasswordTextField_Class
 {
-    STAssertNotNil(mManagedObjectContext, @"ManagedObjectContext is not set");
+    STAssertFalse([[_mPasswordTextField class] isKindOfClass:[UITextField class]], @"PasswordTextField is an instance of the wrong class");
 }
-
-- (void)test_ValidateView
-{
-    STAssertFalse([[mNavigationController.visibleViewController class] isKindOfClass:[ViewController class]], @"ViewController not loaded");
-}
-
 
 @end

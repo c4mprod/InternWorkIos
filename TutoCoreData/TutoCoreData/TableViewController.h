@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ArticleRequest;
-@class Articles;
-@class Users;
+@class ArticleRequest, Articles, Users;
 
-@interface TableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
+@interface TableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSString *mSearchRequest;
     Users *mUser;

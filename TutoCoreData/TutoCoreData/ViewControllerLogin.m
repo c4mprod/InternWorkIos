@@ -42,7 +42,7 @@
 {
     [_loginTextField release];
     [_passwordTextField release];
-    [self.mUser release];
+    [mUser release];
     [super dealloc];
 }
 
@@ -54,9 +54,9 @@
 
 - (BOOL)dataCoreCreateUser
 {
-    self.mUser          = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:_managedObjectContext];
-    self.mUser.login    = _loginTextField.text;
-    self.mUser.password = [NSString md5:_passwordTextField.text];
+    mUser          = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:_managedObjectContext];
+    mUser.login    = _loginTextField.text;
+    mUser.password = [NSString md5:_passwordTextField.text];
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error])
@@ -80,7 +80,7 @@
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {      
         self.mUser = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
-        if ([self.mUser.password isEqualToString:[NSString md5:_passwordTextField.text]])
+        if ([mUser.password isEqualToString:[NSString md5:_passwordTextField.text]])
         {
             if (![_managedObjectContext save:&error])
             {
@@ -106,7 +106,7 @@
     {
         if ([self dataCoreUserRequest])
         {
-             ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil user:self.mUser];
+             ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil user:mUser];
              [self.navigationController pushViewController:viewController animated:true];
              [viewController release];
         }

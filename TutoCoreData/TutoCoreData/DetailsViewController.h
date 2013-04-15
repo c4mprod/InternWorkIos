@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ImageViewManager.h"
+@class ImageViewManager;
 
 @interface DetailsViewController : UIViewController
 {

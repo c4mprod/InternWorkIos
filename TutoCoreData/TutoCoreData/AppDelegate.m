@@ -26,12 +26,17 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{  
-    self.window                    = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.viewControllerLogin       = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
-    self.navigationController      = [[[UINavigationController alloc] initWithRootViewController:self.viewControllerLogin] autorelease];
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
+{
+#if TARGET_NAME == ApplicationTest
+    // Suppression de la base de données
+    NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
+    [fileManager removeItemAtURL:[[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"TutoCoreData.sqlite"] error:NULL];
+#endif
+    self.window                = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.viewControllerLogin   = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
+    self.navigationController  = [[[UINavigationController alloc] initWithRootViewController:_viewControllerLogin] autorelease];
+    _window.rootViewController = _navigationController;
+    [_window makeKeyAndVisible];
     
     return YES;
 }

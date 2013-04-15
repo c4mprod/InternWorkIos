@@ -7,17 +7,12 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "AppDelegate.h"
 @class ViewControllerLogin;
-@class Users;
 
 @interface ViewControllerLoginTest : SenTestCase
 
 @property (retain, nonatomic) ViewControllerLogin *mViewControllerLogin;
-@property (strong, nonatomic) UINavigationController *mNavigationController;
-@property (retain, nonatomic) Users *mUser;
-@property (retain, nonatomic) IBOutlet UITextField *loginTextField;
-@property (retain, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) NSManagedObjectContext *mManagedObjectContext;
+@property (retain, nonatomic) IBOutlet UITextField *mLoginTextField;
+@property (retain, nonatomic) IBOutlet UITextField *mPasswordTextField;
 
 @end

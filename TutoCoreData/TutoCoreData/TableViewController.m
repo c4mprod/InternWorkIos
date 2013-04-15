@@ -78,11 +78,11 @@
     NSError *error = nil;
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {
-        mArticleRequest = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
+        self.mArticleRequest = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
         
         [mTableArticles addObjectsFromArray: mArticleRequest.articles.allObjects];
         NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"index" ascending:YES] autorelease];
-        [self.mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        [mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         
         if (![_managedObjectContext save:&error])
         {
@@ -95,10 +95,10 @@
     }
     else
     {
-        mArticleRequest             = [NSEntityDescription insertNewObjectForEntityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
-        mArticleRequest.user        = self.mUser;
+        self.mArticleRequest        = [NSEntityDescription insertNewObjectForEntityForName:@"ArticleRequest" inManagedObjectContext:_managedObjectContext];
+        mArticleRequest.user        = mUser;
         mArticleRequest.startIndex  = [NSNumber numberWithInt:0];
-        mArticleRequest.value       = self.mSearchRequest;
+        mArticleRequest.value       = mSearchRequest;
         mArticleRequest.finish      = [NSNumber numberWithBool:FALSE];
         
         if (![_managedObjectContext save:&error])
@@ -129,6 +129,10 @@
         
         NSURL *url                        = [NSURL URLWithString:baseUrl];
         NSURLRequest *request             = [NSURLRequest requestWithURL:url];
+#if TARGET_NAME == ApplicationTest
+        // Nécessaire uniquement lors du test de l'application, pour attendre que la requête JSON soit terminée
+        __block int testStatus = 0;
+#endif
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
         {
@@ -141,7 +145,7 @@
             else
             {
                 NSArray *results = [JSON valueForKeyPath:@"responseData.results"];
-                if (!results || !results.count)
+                if (!results || results.count == 0)
                 {
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
                     [self alertViewMessage:@"Information" message:@"No result found" goBack:TRUE];
@@ -155,7 +159,7 @@
                         Articles *lArticle = [NSEntityDescription insertNewObjectForEntityForName:@"Articles" inManagedObjectContext:_managedObjectContext];
                         lArticle.title     = [[lArticleDic objectForKey:JSON_TITLE] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         lArticle.urlImage  = [[lArticleDic objectForKey:JSON_URL] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                        lArticle.index     = [NSNumber numberWithInt:[self.mArticleRequest.startIndex intValue] + i];
+                        lArticle.index     = [NSNumber numberWithInt:[mArticleRequest.startIndex intValue] + i];
                         [mArticleRequest addArticlesObject:lArticle];
                         if (![_managedObjectContext save:&error])
                         {
@@ -176,11 +180,14 @@
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
                 }
             }
+#if TARGET_NAME == ApplicationTest
+            testStatus = 1;
+#endif
         }
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
         {
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
-            if ([self.mArticleRequest.startIndex intValue] != 0)
+            if ([mArticleRequest.startIndex intValue] != 0)
             {
                 [self alertViewMessage:@"Error" message:@"JSON Request failed" goBack:FALSE];
             }
@@ -188,8 +195,17 @@
             {
                 [self alertViewMessage:@"Error" message:@"JSON Request failed" goBack:TRUE];
             }
+#if TARGET_NAME == ApplicationTest
+            testStatus = 2;
+#endif
         }];
         [operation start];
+#if TARGET_NAME == ApplicationTest
+        while (testStatus == 0)
+        {
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate date]];
+        }
+#endif
     }
 }
 
@@ -227,7 +243,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (mTableArticles.count)
+    if (mTableArticles.count != 0)
     {
         return [mArticleRequest.finish boolValue] ? mTableArticles.count : mTableArticles.count + 1;
     }
@@ -243,7 +259,7 @@
     }
     else
     {
-        DetailsViewController *detailsViewController = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil articles:self.mTableArticles index:indexPath.row];
+        DetailsViewController *detailsViewController = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil articles:mTableArticles index:indexPath.row];
         [self.navigationController pushViewController:detailsViewController animated:true];
         [detailsViewController release];
     }
