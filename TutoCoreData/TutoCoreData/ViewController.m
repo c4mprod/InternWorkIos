@@ -38,12 +38,14 @@
 {
     [_searchTextField release];
     [mVcUser release];
+    _searchTextField = nil;
+    mVcUser          = nil;
     [super dealloc];
 }
 
 - (void)animationEdit:(int)_decal
 {
-    _searchTextField.frame = CGRectMake(_searchTextField.frame.origin.x, _searchTextField.frame.origin.y + _decal, _searchTextField.frame.size.width, _searchTextField.frame.size.height);
+    _searchTextField.frame = CGRectMake([_searchTextField frame].origin.x, [_searchTextField frame].origin.y + _decal, [_searchTextField frame].size.width, [_searchTextField frame].size.height);
     
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDelegate:self];
@@ -64,12 +66,12 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField.text.length != 0)
+    if ([[textField text] length] != 0)
     {
         [textField resignFirstResponder];
-        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[textField.text stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] user:mVcUser];
+        TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil request:[[textField text] stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] user:mVcUser];
         
-        [self.navigationController pushViewController:tableViewController animated:true];
+        [[self navigationController] pushViewController:tableViewController animated:true];
         [tableViewController release];
     }
     return YES;

@@ -16,11 +16,37 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECA47E421716C80A00C45199"
-               BuildableName = "ApplicationTest.octest"
+               BlueprintIdentifier = "ECD530E9171D4EA3000D8C21"
+               BuildableName = "UnitTest.octest"
                BlueprintName = "UnitTest"
                ReferencedContainer = "container:TutoCoreData.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "TableViewControllerTest/test_tg">
+               </Test>
+               <Test
+                  Identifier = "ViewControllerLoginTestLogic/test_ViewControllerLoginTestLogic_dataCoreUserRequest_UserPassword">
+               </Test>
+               <Test
+                  Identifier = "ViewControllerLoginTestLogic/test_ViewControllerLoginTestLogic_dataCoreUserRequest_UserPasswordNotNil">
+               </Test>
+               <Test
+                  Identifier = "AppDelegateTest">
+               </Test>
+               <Test
+                  Identifier = "DetailsViewControllerTest">
+               </Test>
+               <Test
+                  Identifier = "TableViewControllerTest">
+               </Test>
+               <Test
+                  Identifier = "ViewControllerLoginTest">
+               </Test>
+               <Test
+                  Identifier = "ViewControllerTest">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

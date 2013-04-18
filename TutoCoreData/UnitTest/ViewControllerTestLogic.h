@@ -1,18 +1,20 @@
 //
-//  ViewControllerLoginTest.h
+//  ViewControllerTestLogic.h
 //  TutoCoreData
 //
-//  Created by Intern on 11/04/13.
+//  Created by Intern on 18/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-@class ViewControllerLogin;
+@class AppDelegate, ViewControllerLogin, ViewController;
 
-@interface ViewControllerLoginTest : SenTestCase
+@interface ViewControllerTestLogic : SenTestCase
 
+@property (strong, nonatomic) UINavigationController *mNavigationController;
 @property (retain, nonatomic) ViewControllerLogin *mViewControllerLogin;
 @property (retain, nonatomic) IBOutlet UITextField *mLoginTextField;
 @property (retain, nonatomic) IBOutlet UITextField *mPasswordTextField;
+@property (strong, nonatomic) NSManagedObjectContext *mManagedObjectContext;
 
 @end

@@ -2,7 +2,7 @@
 //  DetailsViewControllerTest.h
 //  TutoCoreData
 //
-//  Created by Intern on 15/04/13.
+//  Created by Intern on 16/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 

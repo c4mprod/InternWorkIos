@@ -4,7 +4,7 @@
         <attribute name="finish" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="startIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Articles" inverseName="articleRequest" inverseEntity="Articles" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Articles" inverseName="articleRequest" inverseEntity="Articles" syncable="YES"/>
         <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="articleRequests" inverseEntity="Users" syncable="YES"/>
     </entity>
     <entity name="Articles" representedClassName="Articles" syncable="YES">
@@ -16,7 +16,7 @@
     <entity name="Users" representedClassName="Users" syncable="YES">
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="articleRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticleRequest" inverseName="user" inverseEntity="ArticleRequest" syncable="YES"/>
+        <relationship name="articleRequests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArticleRequest" inverseName="user" inverseEntity="ArticleRequest" syncable="YES"/>
     </entity>
     <elements>
         <element name="ArticleRequest" positionX="160" positionY="192" width="128" height="120"/>

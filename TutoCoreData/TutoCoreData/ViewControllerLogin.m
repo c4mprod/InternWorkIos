@@ -21,7 +21,7 @@
     if (self)
     {
         AppDelegate *appDelegate  = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        self.managedObjectContext = appDelegate.managedObjectContext;
+        self.managedObjectContext = [appDelegate managedObjectContext];
     }
     return self;
 }
@@ -43,6 +43,9 @@
     [_loginTextField release];
     [_passwordTextField release];
     [mUser release];
+    _loginTextField    = nil;
+    _passwordTextField = nil;
+    mUser              = nil;
     [super dealloc];
 }
 
@@ -56,10 +59,10 @@
 {
     mUser          = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:_managedObjectContext];
     mUser.login    = _loginTextField.text;
-    mUser.password = [NSString md5:_passwordTextField.text];
+    mUser.password = [NSString md5:[_passwordTextField text]];
     
     NSError *error = nil;
-    if (![_managedObjectContext save:&error])
+    if ([_managedObjectContext save:&error] == 0)
     {
         [self alertViewMessage:@"Error" message:@"Database error: Failed to create user"];
         return FALSE;
@@ -71,7 +74,7 @@
 {
     NSFetchRequest *query       = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:_managedObjectContext];
-    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"login = %@", _loginTextField.text];
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"login = %@", [_loginTextField text]];
     [query setEntity:entity];
     [query setPredicate:predicate];
     [query setFetchLimit:1];
@@ -80,9 +83,9 @@
     if ([_managedObjectContext countForFetchRequest:query error:&error])
     {      
         self.mUser = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
-        if ([mUser.password isEqualToString:[NSString md5:_passwordTextField.text]])
+        if ([mUser.password isEqualToString:[NSString md5:[_passwordTextField text]]])
         {
-            if (![_managedObjectContext save:&error])
+            if ([_managedObjectContext save:&error] == 0)
             {
                 [self alertViewMessage:@"Error" message:@"Database error: Failed to access to user data"];
                 return FALSE;
@@ -102,12 +105,12 @@
         [_passwordTextField becomeFirstResponder];
         
     }
-    if (_loginTextField.text.length != 0 && _passwordTextField.text.length != 0)
+    if ([[_loginTextField text] length] != 0 && [[_passwordTextField text] length] != 0)
     {
         if ([self dataCoreUserRequest])
         {
              ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil user:mUser];
-             [self.navigationController pushViewController:viewController animated:true];
+             [[self navigationController] pushViewController:viewController animated:true];
              [viewController release];
         }
     }

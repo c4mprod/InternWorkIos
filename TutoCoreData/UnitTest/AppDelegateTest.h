@@ -1,13 +1,13 @@
 //
-//  ApplicationTest.h
-//  ApplicationTest
+//  AppDelegateTest.h
+//  TutoCoreData
 //
-//  Created by Intern on 11/04/13.
+//  Created by Intern on 16/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-@class AppDelegate, ViewControllerLogin;
+@class AppDelegate;
 
 @interface AppDelegateTest : SenTestCase
 

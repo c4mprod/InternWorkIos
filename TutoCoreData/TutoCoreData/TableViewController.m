@@ -30,7 +30,7 @@
         mResultPerPage            = 8;
         self.mArticleRequest      = nil;
         AppDelegate *appDelegate  = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        self.managedObjectContext = appDelegate.managedObjectContext;
+        self.managedObjectContext = [appDelegate managedObjectContext];
         self.mTableArticles       = [NSMutableArray array];
     }
     return self;
@@ -53,17 +53,26 @@
     [mSearchRequest release];
     [mTableArticles release];
     [_managedObjectContext release];
+    _mTableView           = nil;
+    mUser                 = nil;
+    mSearchRequest        = nil;
+    mTableArticles        = nil;
+    _managedObjectContext = nil;
     [super dealloc];
 }
 
-- (void)alertViewMessage:(NSString *)title message:(NSString *)_message goBack:(BOOL)_goBack;
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [[self navigationController] popViewControllerAnimated:TRUE];
+    }
+}
+
+- (void)alertViewMessage:(NSString *)title message:(NSString *)_message;
 {
     UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:title message:_message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
     [alertView show];
-    if (_goBack)
-    {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
 }
 
 - (void)dataCoreArticleRequest
@@ -80,13 +89,13 @@
     {
         self.mArticleRequest = [[_managedObjectContext executeFetchRequest:query error:&error] lastObject];
         
-        [mTableArticles addObjectsFromArray: mArticleRequest.articles.allObjects];
+        [mTableArticles addObjectsFromArray: [[mArticleRequest articles] allObjects]];
         NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"index" ascending:YES] autorelease];
         [mTableArticles sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         
-        if (![_managedObjectContext save:&error])
+        if ([_managedObjectContext save:&error] == 0)
         {
-            [self alertViewMessage:@"Error" message:@"Database error: Entity Request" goBack:TRUE];
+            [self alertViewMessage:@"Error" message:@"Database error: Entity Request"];
         }
         else
         {
@@ -101,9 +110,9 @@
         mArticleRequest.value       = mSearchRequest;
         mArticleRequest.finish      = [NSNumber numberWithBool:FALSE];
         
-        if (![_managedObjectContext save:&error])
+        if ([_managedObjectContext save:&error] == 0)
         {
-            [self alertViewMessage:@"Error" message:@"Database error: Entity Request" goBack:TRUE];
+            [self alertViewMessage:@"Error" message:@"Database error: Entity Request"];
         }
         else
         {
@@ -121,15 +130,14 @@
     [spinner startAnimating];
     [alertView show];
     
-    if (![mArticleRequest.finish boolValue])
+    if ([mArticleRequest.finish boolValue] == FALSE)
     {
-        NSString *urlString      = [NSString stringWithFormat:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=%d&start=%@&q=", mResultPerPage, mArticleRequest.startIndex];
+        NSString *urlString      = [NSString stringWithFormat:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=%d&start=%@&q=", mResultPerPage, [mArticleRequest startIndex]];
         NSMutableString *baseUrl = [NSMutableString stringWithString:urlString];
-        [baseUrl appendString:mArticleRequest.value];
-        
-        NSURL *url                        = [NSURL URLWithString:baseUrl];
-        NSURLRequest *request             = [NSURLRequest requestWithURL:url];
-#if TARGET_NAME == ApplicationTest
+        [baseUrl appendString:[mArticleRequest value]];
+        NSURL *url               = [NSURL URLWithString:baseUrl];
+        NSURLRequest *request    = [NSURLRequest requestWithURL:url];
+#if TARGET_NAME == UnitTest
         // Nécessaire uniquement lors du test de l'application, pour attendre que la requête JSON soit terminée
         __block int testStatus = 0;
 #endif
@@ -145,10 +153,10 @@
             else
             {
                 NSArray *results = [JSON valueForKeyPath:@"responseData.results"];
-                if (!results || results.count == 0)
+                if (results == nil || [results count] == 0)
                 {
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
-                    [self alertViewMessage:@"Information" message:@"No result found" goBack:TRUE];
+                    [self alertViewMessage:@"Information" message:@"No result found"];
                 }
                 else
                 {
@@ -161,10 +169,10 @@
                         lArticle.urlImage  = [[lArticleDic objectForKey:JSON_URL] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         lArticle.index     = [NSNumber numberWithInt:[mArticleRequest.startIndex intValue] + i];
                         [mArticleRequest addArticlesObject:lArticle];
-                        if (![_managedObjectContext save:&error])
+                        if ([_managedObjectContext save:&error] == 0)
                         {
                             [alertView dismissWithClickedButtonIndex:0 animated:YES];
-                            [self alertViewMessage:@"Error" message:@"Database error: Entity Articles" goBack:TRUE];
+                            [self alertViewMessage:@"Error" message:@"Database error: Entity Articles"];
                         }
                         else
                         {
@@ -180,27 +188,28 @@
                     [alertView dismissWithClickedButtonIndex:0 animated:YES];
                 }
             }
-#if TARGET_NAME == ApplicationTest
+#if TARGET_NAME == UnitTest
             testStatus = 1;
 #endif
         }
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
         {
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
-            if ([mArticleRequest.startIndex intValue] != 0)
+            if ([[mArticleRequest startIndex] intValue] != 0)
             {
-                [self alertViewMessage:@"Error" message:@"JSON Request failed" goBack:FALSE];
+                UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Error" message:@"JSON Request failed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+                [alertView show];
             }
             else
             {
-                [self alertViewMessage:@"Error" message:@"JSON Request failed" goBack:TRUE];
+                [self alertViewMessage:@"Error" message:@"JSON Request failed"];
             }
-#if TARGET_NAME == ApplicationTest
+#if TARGET_NAME == UnitTest
             testStatus = 2;
 #endif
         }];
         [operation start];
-#if TARGET_NAME == ApplicationTest
+#if TARGET_NAME == UnitTest
         while (testStatus == 0)
         {
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate date]];
@@ -212,9 +221,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if (![mArticleRequest.finish boolValue])
+    if ([[mArticleRequest finish] boolValue] == FALSE)
     {
-        if (indexPath.row < mTableArticles.count)
+        if ([indexPath row] < [mTableArticles count])
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"Article"];
             if (!cell)
@@ -222,8 +231,8 @@
                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Article"] autorelease];
             }
             
-            cell.textLabel.text = [[mTableArticles objectAtIndex:indexPath.row] title];
-            cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+            [cell textLabel].text = [[mTableArticles objectAtIndex:[indexPath row]] title];
+            cell.accessoryType    = UITableViewCellAccessoryDisclosureIndicator;
         }
         else
         {
@@ -232,10 +241,10 @@
             {
                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LoadMore"] autorelease];
             }
-            cell.textLabel.text          = @"Load more results...";
-            cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.textLabel.textColor     = [UIColor grayColor];
-            cell.textLabel.font          = [UIFont boldSystemFontOfSize:14];
+            [cell textLabel].text          = @"Load more results...";
+            [cell textLabel].textAlignment = NSTextAlignmentCenter;
+            [cell textLabel].textColor     = [UIColor grayColor];
+            [cell textLabel].font          = [UIFont boldSystemFontOfSize:14];
         }
     }
     return cell;
@@ -243,24 +252,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (mTableArticles.count != 0)
+    if ([mTableArticles count] != 0)
     {
-        return [mArticleRequest.finish boolValue] ? mTableArticles.count : mTableArticles.count + 1;
+        return [[mArticleRequest finish] boolValue] ? [mTableArticles count] : [mTableArticles count] + 1;
     }
     return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == mTableArticles.count)
+    if ([indexPath row] == [mTableArticles count])
     {
-        mArticleRequest.startIndex = [NSNumber numberWithInt:[mArticleRequest.startIndex intValue] + mResultPerPage];
+        mArticleRequest.startIndex = [NSNumber numberWithInt:[[mArticleRequest startIndex] intValue] + mResultPerPage];
         [self getImageViaJSON];
     }
     else
     {
-        DetailsViewController *detailsViewController = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil articles:mTableArticles index:indexPath.row];
-        [self.navigationController pushViewController:detailsViewController animated:true];
+        DetailsViewController *detailsViewController = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil articles:mTableArticles index:[indexPath row]];
+        [[self navigationController] pushViewController:detailsViewController animated:true];
         [detailsViewController release];
     }
 }

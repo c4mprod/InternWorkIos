@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  ViewControllerTest.h
 //  TutoCoreData
 //
-//  Created by Intern on 12/04/13.
+//  Created by Intern on 16/04/13.
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-@class ViewController;
+@class AppDelegate, ViewController;
 
 @interface ViewControllerTest : SenTestCase
 
