@@ -35,6 +35,7 @@
     
 }
 
+// Application Test
 - (void)test_AppDelegateTest_Application_NotNil
 {
     STAssertNotNil(_mApplication, @"Application is not set");

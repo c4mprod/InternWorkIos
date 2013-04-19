@@ -32,19 +32,10 @@
                   Identifier = "ViewControllerLoginTestLogic/test_ViewControllerLoginTestLogic_dataCoreUserRequest_UserPasswordNotNil">
                </Test>
                <Test
-                  Identifier = "AppDelegateTest">
+                  Identifier = "TableViewControllerTestLogic">
                </Test>
                <Test
-                  Identifier = "DetailsViewControllerTest">
-               </Test>
-               <Test
-                  Identifier = "TableViewControllerTest">
-               </Test>
-               <Test
-                  Identifier = "ViewControllerLoginTest">
-               </Test>
-               <Test
-                  Identifier = "ViewControllerTest">
+                  Identifier = "ViewControllerTestLogic">
                </Test>
             </SkippedTests>
          </TestableReference>

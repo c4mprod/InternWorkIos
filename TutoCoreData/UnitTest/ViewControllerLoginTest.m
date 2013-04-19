@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Intern. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "ViewControllerLoginTest.h"
 #import "AppDelegate.h"
 #import "ViewControllerLogin.h"
@@ -41,6 +42,7 @@
     [super tearDown];
 }
 
+// Application Test
 - (void)test_ViewControllerLoginTest_ViewControllerLogin_NotNil
 {
     STAssertNotNil(_mViewControllerLogin, @"ViewControllerLogin is not set");
@@ -69,6 +71,18 @@
 - (void)test_ViewControllerLoginTest_PasswordTextField_Class
 {
     STAssertFalse([[_mPasswordTextField class] isKindOfClass:[UITextField class]], @"PasswordTextField is an instance of the wrong class");
+}
+
+
+// Logic Test
+- (void)test_ManagedObjectContext_NotNil
+{
+    STAssertNotNil([_mViewControllerLogin managedObjectContext], @"ManagedObjectContext is not set");
+}
+
+- (void)test_ManagedObjectContext_Class
+{
+    STAssertFalse([[[_mViewControllerLogin managedObjectContext] class] isKindOfClass:[NSManagedObjectContext class]] , @"ManagedObjectContext is an instance of the wrong class");
 }
 
 @end

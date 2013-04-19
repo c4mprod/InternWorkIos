@@ -13,6 +13,7 @@
 #import "ViewController.h"
 #import "TableViewController.h"
 #import "Users.h"
+#import "ArticleRequest.h"
 
 @implementation TableViewControllerTest
 static uint searchNum = 0;
@@ -75,13 +76,14 @@ static uint searchNum = 0;
     [_mViewController textFieldShouldReturn:[_mViewController searchTextField]];
     
     // Référence à la nouvelle vue visible: TableViewController
-    self.mTableViewController = (TableViewController *)[[_mNavigationController viewControllers] lastObject];
+    self.mTableViewController = (TableViewController *)[_mNavigationController visibleViewController];
     [_mTableViewController view];
     
     // Référence aux IBOutlet présents dans la vue TableViewController
     self.mTableView = [_mTableViewController mTableView];
 }
 
+// Application Test
 - (void)test_TableViewControllerTest_TableViewController_NotNil
 {
     [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
@@ -157,6 +159,92 @@ static uint searchNum = 0;
     [_mTableViewController tableView:_mTableView didSelectRowAtIndexPath:indexPath];
     
     STAssertTrue([_mTableView numberOfRowsInSection:sectionIndex] == 17, @"TableView number of row in section should be 17 but is %d", [_mTableView numberOfRowsInSection:sectionIndex]); // 8 résultats + 8 résultats du nouveau paquet + 1 pour la cellule "Load more results..."
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+// Logic Test
+- (void)test_SearchRequest_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController mSearchRequest], @"SearchRequest is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_SearchRequest_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController mSearchRequest] class] isKindOfClass:[NSString class]], @"User is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_User_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController mUser], @"User is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_User_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController mUser] class] isKindOfClass:[Users class]], @"User is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ManagedObjectContext_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController managedObjectContext], @"ManagedObjectContext is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ManagedObjectContext_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController managedObjectContext] class] isKindOfClass:[NSManagedObjectContext class]] , @"ManagedObjectContext is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ArticleRequest_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController mArticleRequest], @"ArticleRequest is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ArticleRequest_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController mArticleRequest] class] isKindOfClass:[ArticleRequest class]], @"ArticleRequest is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ArticleRequest_User_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController mArticleRequest], @"ArticleRequest is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_ArticleRequest_User_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController mArticleRequest] user] isKindOfClass:[Users class]], @"ArticleRequest user is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+
+- (void)test_TableArticles_NotNil
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertNotNil([_mTableViewController mTableArticles], @"TableArticles is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_TableArticles_Class
+{
+    [self loadTableView:TRUE]; // Chargement des résultats d'une requête unique Google Image dans la tableView. La requête renvoie des résultats. Les résultats sont renvoyés par paquet de 8
+    STAssertFalse([[[_mTableViewController mTableArticles] class] isKindOfClass:[NSMutableArray class]], @"TableArticles is an instance of the wrong class");
     [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
 }
 

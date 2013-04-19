@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ViewControllerLogin.h"
 #import "ViewController.h"
+#import "Users.h"
 
 @implementation ViewControllerTest
 
@@ -51,6 +52,7 @@
     [super tearDown];
 }
 
+// Application Test
 - (void)test_ViewControllerTest_ViewController_NotNil
 {
     STAssertNotNil(_mViewController, @"ViewController is not set");
@@ -73,6 +75,19 @@
 {
     STAssertFalse([[_mSearchTextField class] isKindOfClass:[UITextField class]], @"SearchTextField is an instance of the wrong class");
     [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Attente du chargement complet de la vue courante avant de lancer le retour au rootViewController
+}
+
+// Logic Test
+- (void)test_User_NotNil
+{
+    STAssertNotNil([_mViewController mVcUser], @"User is not set");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
+}
+
+- (void)test_User_Class
+{
+    STAssertFalse([[[_mViewController mVcUser] class] isKindOfClass:[Users class]], @"User is an instance of the wrong class");
+    [_mNavigationController popToRootViewControllerAnimated:FALSE]; // Retour au rootViewController
 }
 
 @end

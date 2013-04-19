@@ -29,11 +29,9 @@
 {
 #if TARGET_NAME == UnitTest
     // Suppression de la base de données
-    NSLog(@"suppression");
     NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
     [fileManager removeItemAtURL:[[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"TutoCoreData.sqlite"] error:NULL];
 #endif
-    NSLog(@"suppression1");
     self.window                = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.viewControllerLogin   = [[[ViewControllerLogin alloc] initWithNibName:@"ViewControllerLogin" bundle:nil] autorelease];
     self.navigationController  = [[[UINavigationController alloc] initWithRootViewController:_viewControllerLogin] autorelease];
